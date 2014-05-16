@@ -1,0 +1,52 @@
+<h2>All locations</h2>
+
+<h3>All locations around "<%= @center %>" within a <%= @radius %> mile(s) Radius</h3>
+
+
+<% @locations_within_radius.each do |location_within_radius| %>
+    <li>                   
+        <%= location_within_radius.name %>
+    </li>
+<% end %>
+
+<hr/>
+
+<table>
+
+    <% @locations.each do |location| %>
+        <tr>
+            <td>Name:</td>             
+            <td><%= location.name %></td>            
+        </tr>
+        <tr>
+            <td>Address:</td>
+            <td><%= location.address %></td>
+        </tr>
+        <tr>
+            <td>Category:</td>
+            <td><%= location.cat %></td>
+        </tr>
+        <tr>
+            <td>Public?</td>
+            <td><%= location.public %></td>
+        </tr>
+        <tr>     
+            <td colspan="2"><%= static_map_for(location) %></td>
+        </tr>
+        <tr>  
+            <td colspan="2">Find locations:</td>
+        </tr>
+        <tr>  
+            <td colspan="2">
+            <form action="" method="get">
+                <input type="text" name="radius" placeholder="... radius in miles">
+                <button>submit</button> 
+            </form>
+
+            </td>
+        </tr>
+        
+
+    <% end %>
+
+</table>

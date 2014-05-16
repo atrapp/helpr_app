@@ -1,5 +1,12 @@
 <h2>All locations</h2>
 
+<form action="/locations" method="get">    
+    <input type="text" name="radius" placeholder="... radius in miles">
+    <button>submit</button> 
+</form>
+
+
+
 <h3>All locations around "<%= @center %>" within a <%= @radius %> mile(s) Radius</h3>
 
 
@@ -38,11 +45,7 @@
         </tr>
         <tr>  
             <td colspan="2">
-            <form action="" method="get">
-                <input type="text" name="radius" placeholder="... radius in miles">
-                <button>submit</button> 
-            </form>
-
+            <button>submit</button>
             </td>
         </tr>
         

@@ -51,21 +51,3 @@ class LocationsController < ApplicationController
 
 
 end
-
-
-
-# class LocationsController < ApplicationController
-
-#   include StaticMapHelper
-
-#   def index
-#     @locations = Location.all
-#     @center  = Location.first.name
-#     @radius = 5
-#     @locations_within_radius  = Location.within(@radius, :origin => @center)     
-#   end
-
-# end
-
-
-#  Markle Residence:   123 W 13th St, New York, NY 10011

@@ -1,0 +1,18 @@
+<h2>Category Data</h2>
+
+<table>
+
+        <tr>
+            <td>Title:</td>             
+            <td><%= @category.title %></td>            
+        </tr>
+     
+</table>
+
+<a href="/categories/<%= @category.id %>/edit"><button>EDIT</button></a>
+
+<form action="/categories/<%= @category.id%>" method="post">
+  <%= token_tag %>
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="DELETE">
+</form>

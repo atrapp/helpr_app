@@ -1,0 +1,21 @@
+<h2>All categories</h2>
+
+<%= link_to "Create category", new_category_path %>
+
+<table>
+
+    <% @categories.each do |category| %>
+     
+        <tr>
+            <td>Title:</td>             
+            <td><%= category.title %></td>            
+        </tr>       
+        <tr>  
+            <td><a href="/categories/<%= category.id %>"><button>SHOW</button></a></td>
+            <td><a href="/categories/<%= category.id %>/edit"><button>EDIT</button></a></td>
+        </tr>
+        
+    <% end %>
+
+</table>
+

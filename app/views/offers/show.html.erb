@@ -1,0 +1,43 @@
+<h2>Offer Data</h2>
+
+ <table>
+
+        <tr>
+            <td>Title:</td>             
+            <td><%= @offer.title %></td>            
+        </tr>
+        <tr>
+            <td>Description:</td>
+            <td><%= @offer.description %></td>
+        </tr>
+        <tr>
+            <td>Date start:</td>             
+            <td><%= @offer.date_start %></td>            
+        </tr>
+        <tr>
+            <td>Date end:</td>             
+            <td><%= @offer.date_end %></td>            
+        </tr>
+        <tr>
+            <td>User:</td>             
+            <td><%= @offer.user %></td>            
+        </tr>
+        <tr>
+            <td>Category:</td>             
+            <td><%= @offer.category %></td>            
+        </tr>
+        <tr>
+            <td>Location:</td>             
+            <td><%= @offer.location %></td>            
+        </tr>
+        
+</table>
+
+<a href="/offers/<%= @offer.id %>/edit"><button>EDIT</button></a>
+
+<form action="/offers/<%= @offer.id%>" method="post">
+  <%= token_tag %>
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="DELETE">
+</form>
+

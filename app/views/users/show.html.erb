@@ -1,4 +1,50 @@
-<h2>User Data</user>
+<h2>User Data</h2>
 
+<table>
 
-<%= @user.name %>
+        <tr>
+            <td>Name:</td>             
+            <td><%= @user.name %></td>            
+        </tr>
+        <tr>
+            <td>Address:</td>
+            <td><%= @user.address %></td>
+        </tr>
+        <tr>
+            <td>Gender:</td>             
+            <td><%= @user.gender %></td>            
+        </tr>
+        <tr>
+            <td>Age:</td>             
+            <td><%= @user.age %></td>            
+        </tr>
+        <tr>
+            <td>Phone:</td>             
+            <td><%= @user.phone %></td>            
+        </tr>
+        <tr>
+            <td>Email:</td>             
+            <td><%= @user.email %></td>            
+        </tr>
+        <tr>
+            <td>Description:</td>             
+            <td><%= @user.description %></td>            
+        </tr>
+        <tr>
+            <td>Rating:</td>             
+            <td><%= @user.rating %></td>            
+        </tr>
+        <tr>
+            <td>Photo:</td>
+            <td><%= @user.picUrl %></td>
+        </tr>
+
+</table>
+
+<a href="/users/<%= @user.id %>/edit"><button>EDIT</button></a>
+
+<form action="/users/<%= @user.id%>" method="post">
+  <%= token_tag %>
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="DELETE">
+</form>

@@ -45,15 +45,9 @@
             <td colspan="2"><%= static_map_for(location) %></td>
         </tr>
         <tr>  
-            <td colspan="2">Find locations:</td>
-        </tr>
-        <tr>  
-            <td colspan="2">
-            <button>submit</button>
-            </td>
-        </tr>
-        
-
+            <td><a href="/locations/<%= location.id %>"><button>SHOW</button></a></td>
+            <td><a href="/locations/<%= location.id %>/edit"><button>EDIT</button></a></td>
+        </tr>                
     <% end %>
 
 </table>

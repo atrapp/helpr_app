@@ -14,14 +14,10 @@
             <td>Address:</td>
             <td><%= user.address %></td>
         </tr>
-        
-<!-- Gender -->
         <tr>
             <td>Gender:</td>
             <td><%= user.gender %></td>
         </tr>
-<!-- Gender -->
-
         <tr>
             <td>Age:</td>
             <td><%= user.age %></td>
@@ -45,14 +41,13 @@
         <tr>
             <td>picUrl:</td>
             <td><%= user.picUrl %></td>
-        </tr>   
+        </tr>
         <tr>  
-            <td colspan="2">
-            bla bla bla
-            </td>
-        </tr>       
-
- 
+            <td><a href="/users/<%= user.id %>"><button>SHOW</button></a></td>
+            <td><a href="/users/<%= user.id %>/edit"><button>EDIT</button></a></td>
+        </tr>
+        
     <% end %>
 
 </table>
+

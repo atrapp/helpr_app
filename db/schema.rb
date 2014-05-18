@@ -11,10 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140516170606) do
+ActiveRecord::Schema.define(version: 20140516215005) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: true do |t|
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "locations", force: true do |t|
     t.string   "name"
@@ -27,8 +33,40 @@ ActiveRecord::Schema.define(version: 20140516170606) do
     t.float    "lat"
   end
 
-  create_table "places", force: true do |t|
+  create_table "offers", force: true do |t|
     t.string   "title"
+    t.string   "description"
+    t.date     "date_start"
+    t.date     "date_end"
+    t.integer  "user_id"
+    t.integer  "category_id"
+    t.integer  "location_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "requests", force: true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.date     "date_start"
+    t.date     "date_end"
+    t.integer  "user_id"
+    t.integer  "category_id"
+    t.integer  "location_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "gender"
+    t.integer  "age"
+    t.string   "phone"
+    t.string   "email"
+    t.string   "description"
+    t.integer  "rating"
+    t.string   "picUrl"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

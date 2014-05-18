@@ -1,0 +1,92 @@
+* 
+Project Name: Helpr App
+Client: General Assembly 
+Author: Andrea Trapp
+Developer @GA in NYC
+*/
+
+/* Box Model Hack */
+* {
+     -moz-box-sizing: border-box; /* Firexfox */
+     -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+     box-sizing: border-box; /* IE */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: black;
+ /* background-color: #EBEBE0;*/
+/*  background: url("bg_pic.jpg") fixed center;
+  background-size: cover;   */  
+}
+
+.wrapper {
+  margin: 0 auto;  
+  padding: 0;
+  max-width: 960px; 
+  min-height: 800px;
+  background-color: #EBEBE0;
+}
+
+h1 {
+  margin: 0;
+  text-align: center;
+  background-color: orange;
+}
+
+.helpnav {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 600px;
+  min-height: 800px;
+  background-color: blue;
+}
+
+.nav {
+    display: inline-block;
+    margin: 0;        
+   
+    /*color: #3B3B45;*/
+    font-weight: bold;    
+    padding: 10px;
+  }
+
+.nav a {
+ text-decoration: none;
+ font-size: 20px;
+
+}
+
+.nav a p {
+  margin: 0;
+  padding; 0;
+}
+
+.circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 100%; 
+  box-shadow: 10px 10px 50px #3B3B45; 
+  background-color: rgba(235,235,224,0.8); //#EBEBE0;
+  margin: 50px 10px 10px 50px; 
+  text-align: center;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.request {  
+  background-color: rgba(255,0,0,0.8);
+}
+
+.offer {   
+  background-color: rgba(0,255,0,0.8);
+}
+
+

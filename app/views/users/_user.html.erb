@@ -1,0 +1,55 @@
+
+<table>    
+    <%= form_for @user do |f| %>
+ <%= f.submit %>  
+
+        <tr>
+            <td><%= f.label :name %></td>             
+            <td><%= f.text_field :name %></td>            
+        </tr>
+        <tr>
+            <td><%= f.label :address %></td>
+            <td><%= f.text_field :address %></td>
+        </tr>
+        
+<!-- Gender -->
+        <tr>
+            <td><%= f.label :gender %></td>
+            <td><%= f.text_field :gender %></td>
+        </tr>
+<!-- Gender -->
+
+        <tr>
+            <td><%= f.label :age %></td>
+            <td><%= f.text_field :age %></td>
+        </tr>
+        <tr>
+            <td><%= f.label :phone %></td>
+            <td><%= f.text_field :phone %></td>
+        </tr>
+        <tr>
+            <td><%= f.label :email %></td>
+            <td><%= f.text_field :email %></td>
+        </tr>
+        <tr>
+            <td><%= f.label :description %></td>
+            <td><%= f.text_field :description %></td>
+        </tr>
+        <tr>
+            <td><%= f.label :rating %></td>
+            <td><%= f.text_field :rating %></td>
+        </tr>
+        <tr>
+            <td><%= f.label :picUrl %></td>
+            <td><%= f.text_field :picUrl %></td>
+        </tr>  
+
+         
+        
+
+    <% end %>
+
+   
+</table>
+
+

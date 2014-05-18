@@ -12,8 +12,12 @@
 - changed name of column "title" to "name"
 - changed name and datatype of columns longitude/string and latitude/string to lng/float and lat/float
 - created a view for locations Controller for testing purposes (calling geokit methods to geocode address into lng and lat, retrieve data from locations and show map position)
+- added form functionality for user input to dynamically retrieve all locations within a given radius
 
-next step:
-- add form functionality to dynamically retrieve all locations within a given radius
+05/17/2014
+- added all controllers 
+- added all views
+- 
+
 
 

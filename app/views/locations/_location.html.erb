@@ -1,0 +1,24 @@
+<%= form_for @location do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %><br />
+
+  <%= f.label :address %>
+  <%= f.text_field :address %><br />
+
+  <%= f.label :cat %>
+  <%= f.text_field :cat %><br />
+
+  <%= f.label :public %>
+  <%= radio_button(:public, "public", "true") %>
+  <%= radio_button(:public, "public", "false") %><br />
+
+  <%= f.label :lng %>
+  <%= f.text_field :lng %><br />
+
+  <%= f.label :lat %>
+  <%= f.text_field :lat %><br />
+
+  <%= f.submit %>
+
+<% end %>

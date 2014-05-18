@@ -1,0 +1,58 @@
+<h2>All users</h2>
+
+<%= link_to "Create user", new_user_path %>
+
+<table>
+
+    <% @users.each do |user| %>
+     
+        <tr>
+            <td>Name:</td>             
+            <td><%= user.name %></td>            
+        </tr>
+        <tr>
+            <td>Address:</td>
+            <td><%= user.address %></td>
+        </tr>
+        
+<!-- Gender -->
+        <tr>
+            <td>Gender:</td>
+            <td><%= user.gender %></td>
+        </tr>
+<!-- Gender -->
+
+        <tr>
+            <td>Age:</td>
+            <td><%= user.age %></td>
+        </tr>
+        <tr>
+            <td>Phone:</td>
+            <td><%= user.phone %></td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td><%= user.email %></td>
+        </tr>
+        <tr>
+            <td>Description:</td>
+            <td><%= user.description %></td>
+        </tr>
+        <tr>
+            <td>Rating:</td>
+            <td><%= user.rating %></td>
+        </tr>
+        <tr>
+            <td>picUrl:</td>
+            <td><%= user.picUrl %></td>
+        </tr>   
+        <tr>  
+            <td colspan="2">
+            bla bla bla
+            </td>
+        </tr>       
+
+ 
+    <% end %>
+
+</table>

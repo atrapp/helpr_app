@@ -1,7 +1,11 @@
 <h2>Offer Data</h2>
 
- <table>
+<table>
 
+        <tr>
+            <td>An Offer from:</td>             
+            <td><%= @offer.user.name %></td>            
+        </tr>
         <tr>
             <td>Title:</td>             
             <td><%= @offer.title %></td>            
@@ -17,18 +21,14 @@
         <tr>
             <td>Date end:</td>             
             <td><%= @offer.date_end %></td>            
-        </tr>
-        <tr>
-            <td>User:</td>             
-            <td><%= @offer.user %></td>            
-        </tr>
+        </tr>        
         <tr>
             <td>Category:</td>             
-            <td><%= @offer.category %></td>            
+            <td><%= @offer.category.title %></td>            
         </tr>
         <tr>
             <td>Location:</td>             
-            <td><%= @offer.location %></td>            
+            <td><%= @offer.location.name %></td>            
         </tr>
         
 </table>

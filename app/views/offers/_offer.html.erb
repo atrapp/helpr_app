@@ -1,5 +1,8 @@
 <%= form_for @offer do |f| %>
 
+    <%= f.label :user %>
+    <%= f.text_field :user_id, :value => current_user.id %><br /> 
+
     <%= f.label :title %>
     <%= f.text_field :title %><br />            
     
@@ -12,15 +15,17 @@
     <%= f.label :date_end %>  
     <%= f.date_field :date_end %><br />    
     
-    <%= f.label :user %>
-    <%= f.text_field :user %><br />
-    
     <%= f.label :category %>
-    <%= f.text_field :category %><br />
-   
-    <%= f.label :location %>
-    <%= f.text_field :location %><br />
+    <%= f.select("category_id", Category.all.collect {|c| [ c.title, c.id ] }, {include_blank: 'None'}) %><br />
+     
+    <%= f.label :location %>  
+    <%= f.select("location_id", Location.all.collect {|l| [ l.name, l.id ] }, {include_blank: 'None'}) %><br />
         
     <%= f.submit %>       
 
 <% end %>
+
+
+  
+      
+   

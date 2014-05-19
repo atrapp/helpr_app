@@ -7,6 +7,10 @@
     <% @offers.each do |offer| %>     
  
         <tr>
+            <td>An Offer from:</td>             
+            <td><%= offer.user.name %></td>            
+        </tr>
+        <tr>
             <td>Title:</td>             
             <td><%= offer.title %></td>            
         </tr>
@@ -21,18 +25,14 @@
         <tr>
             <td>Date end:</td>             
             <td><%= offer.date_end %></td>            
-        </tr>
-        <tr>
-            <td>User:</td>             
-            <td><%= offer.user %></td>            
-        </tr>
+        </tr>       
         <tr>
             <td>Category:</td>             
-            <td><%= offer.category %></td>            
+            <td><%= offer.category.title %></td>            
         </tr>
         <tr>
             <td>Location:</td>             
-            <td><%= offer.location %></td>            
+            <td><%= offer.location.name %></td>            
         </tr>
         <tr>  
             <td><a href="/offers/<%= offer.id %>"><button>SHOW</button></a></td>

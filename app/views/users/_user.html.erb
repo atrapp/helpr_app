@@ -7,26 +7,34 @@
     <%= f.text_field :address %><br />
   
     <%= f.label :gender %>
-    <%= radio_button("user", "gender", "female") %>female
-    <%= radio_button("user", "gender", "male") %>male<br />
+    <%= radio_button("user", "gender", "female") %>
+    <%= f.label(:gender, "female") %>    
+    <%= radio_button("user", "gender", "male") %>
+    <%= f.label(:gender, "male") %><br />
     
     <%= f.label :age %>
     <%= f.text_field :age %><br />
   
     <%= f.label :phone %>
-    <%= f.text_field :phone %><br />
+    <%= f.telephone_field :phone %><br />    
     
     <%= f.label :email %>
-    <%= f.text_field :email %><br />
-    
-    <%= f.label :description %>
-    <%= f.text_field :description %><br />
+    <%= f.email_field :email %><br />
+        
+    <%= f.label :description %><br />
+    <%= f.text_area(:description, size: "24x6") %><br />  
    
     <%= f.label :rating %>
     <%= f.text_field :rating %><br />
    
     <%= f.label :picUrl %>
     <%= f.text_field :picUrl %><br />
+
+    <%= f.label :password %>
+    <%= f.password_field :password %><br />
+
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %><br />
      
     <%= f.submit %>       
 

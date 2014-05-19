@@ -9,9 +9,11 @@
   <%= f.label :cat %>
   <%= f.text_field :cat %><br />
 
-  <%= f.label :public %>
-  <%= radio_button("location", "public", "true") %>yes
-  <%= radio_button("location", "public", "false") %>no<br />
+  <%= f.label :public %>  
+  <%= radio_button("location", "public", "true") %>
+  <%= f.label(:public, "yes") %>
+  <%= radio_button("location", "public", "false") %>
+  <%= f.label(:public, "no") %><br />  
 
   <%= f.label :lng %>
   <%= f.text_field :lng %><br />

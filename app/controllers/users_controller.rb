@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   def index
+    @user = current_user
     @users = User.all
   end
 
@@ -11,6 +12,8 @@ class UsersController < ApplicationController
   def create
     user = User.create(user_params)
     redirect_to user_path(user)
+    # User.create(user_params)
+    # redirect_to root_path
   end
 
   def show
@@ -35,7 +38,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :address, :gender, :age, :phone, :email, :description, :rating, :picUrl) 
+    params.require(:user).permit(:name, :address, :gender, :age, :phone, :email, :description, :rating, :picUrl, :password, :password_confirmation) 
   end
 
 end

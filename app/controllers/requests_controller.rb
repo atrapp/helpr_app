@@ -5,6 +5,9 @@ class RequestsController < ApplicationController
   end
 
   def new
+    @users = User.all
+    @locations = Location.all
+    @categories = Category.all
     @request = Request.new
   end
 
@@ -35,8 +38,7 @@ class RequestsController < ApplicationController
   private
 
   def request_params
-    params.require(:request).permit(:title, :description, :date_start, :date_end) 
-    # , :user, :category, :location) 
+    params.require(:request).permit(:title, :description, :date_start, :date_end, :user_id, :category_id, :location_id)
   end
 
 end

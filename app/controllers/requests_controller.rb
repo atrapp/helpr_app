@@ -5,7 +5,7 @@ class RequestsController < ApplicationController
   end
 
   def new
-    if current_user != nil     
+    unless current_user.nil?     
       @request = Request.new
     else
       redirect_to log_in_path, alert: 'Log-In Failed'
@@ -22,11 +22,11 @@ class RequestsController < ApplicationController
   end
 
   def edit  
-    if current_user != nil
+   unless current_user.nil?     
       if current_user.id == Request.find(params[:id]).user_id    
         @request = Request.find(params[:id])
       else 
-        redirect_to log_in_path, alert: 'Log-In Failed'
+        redirect_to requests_path, alert: 'Only Author can update'
       end
     else
       redirect_to log_in_path, alert: 'Log-In Failed'
@@ -40,12 +40,12 @@ class RequestsController < ApplicationController
   end
 
   def destroy   
-    if current_user != nil
+    unless current_user.nil?     
       if current_user.id == Request.find(params[:id]).user_id   
         Request.delete(params[:id])   
         redirect_to requests_path
       else 
-        redirect_to log_in_path, alert: 'Log-In Failed'
+        redirect_to requests_path, alert: 'Only Author can delete'
       end
     else
       redirect_to log_in_path, alert: 'Log-In Failed'

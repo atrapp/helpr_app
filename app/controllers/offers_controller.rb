@@ -4,8 +4,12 @@ class OffersController < ApplicationController
     @offers = Offer.all
   end
 
-  def new
-    @offer = Offer.new
+  def new   
+    unless current_user.nil?     
+       @offer = Offer.new
+    else
+      redirect_to log_in_path, alert: 'Log-In Failed'
+    end
   end
 
   def create
@@ -17,8 +21,16 @@ class OffersController < ApplicationController
     @offer = Offer.find(params[:id])
   end
 
-  def edit
-    @offer = Offer.find(params[:id])    
+  def edit    
+    unless current_user.nil?     
+      if current_user.id == Offer.find(params[:id]).user_id    
+        @offer = Offer.find(params[:id]) 
+      else 
+        redirect_to offers_path, alert: 'Only Author can update'
+      end
+    else
+      redirect_to log_in_path, alert: 'Log-In Failed'
+    end   
   end
 
   def update
@@ -28,8 +40,16 @@ class OffersController < ApplicationController
   end
 
   def destroy
-    Offer.delete(params[:id])   
-    redirect_to offers_path
+    unless current_user.nil?     
+      if current_user.id == Offer.find(params[:id]).user_id   
+        Offer.delete(params[:id])   
+        redirect_to offers_path
+      else 
+        redirect_to offers_path, alert: 'Only Author can delete'
+      end
+    else
+      redirect_to log_in_path, alert: 'Log-In Failed'
+    end
   end
 
   private

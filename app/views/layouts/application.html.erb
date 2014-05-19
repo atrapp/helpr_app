@@ -7,17 +7,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-    <div>
+    <div class="wrapper">
+
+      <div>
         <h1>
           <%= flash.now[:alert] %>
         </h1>
         <h1>
           <%= flash.now[:notice] %>
         </h1>
-    </div>
+      </div>
 
-    <div class="wrapper">
-        <%= yield %>
+      <%= yield %>
+
     </div>
 </body>
 </html>

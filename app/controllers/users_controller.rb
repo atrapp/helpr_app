@@ -6,14 +6,12 @@ class UsersController < ApplicationController
   end
 
   def new
-    @user = User.new
+    @user = User.new   
   end
 
   def create
     user = User.create(user_params)
-    redirect_to user_path(user)
-    # User.create(user_params)
-    # redirect_to root_path
+    redirect_to user_path(user)    
   end
 
   def show
@@ -21,7 +19,17 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])    
+  #   @user = User.find(params[:id])
+
+    unless current_user.nil?     
+      if current_user.id == User.find(params[:id]).id    
+        @user = User.find(params[:id])    
+      else 
+        redirect_to users_path, alert: 'Only Author can update'
+      end
+    else
+      redirect_to log_in_path, alert: 'Log-In Failed'
+    end   
   end
 
   def update
@@ -31,8 +39,19 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    User.delete(params[:id])   
-    redirect_to users_path
+    # User.delete(params[:id])   
+    # redirect_to users_path
+
+    unless current_user.nil?     
+      if current_user.id == User.find(params[:id]).id   
+        User.delete(params[:id])   
+        redirect_to users_path
+      else 
+        redirect_to users_path, alert: 'Only Author can delete'
+      end
+    else
+      redirect_to log_in_path, alert: 'Log-In Failed'
+    end
   end
 
   private

@@ -2,6 +2,30 @@ class RequestsController < ApplicationController
 
   def index
     @requests = Request.all
+
+
+    # @locations = Location.all
+    # @start_location  = params[:start_location]   
+    # @radius = params[:radius]
+
+    # if @start_location != nil && @radius != nil
+    #   @locations_within_radius  = Location.within(@radius, :origin => @start_location) 
+    #     else
+    #   @locations_within_radius = [] 
+    # end
+
+    
+    @search_cat = params[:search_cat]
+    @search_locations = []
+
+    @requests.each do |request|
+      title = request.category.title
+
+      if request.category.title == @search_cat
+           @search_locations << request.location
+      end
+    end
+
   end
 
   def new

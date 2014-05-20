@@ -1,34 +1,12 @@
 <h2>Search requests</h2>
 
 
-Filter requests for title:
+Filter requests by category and radius:
 
-<form action="/requests" method="get">
-    <input type="text" name="search_cat" placeholder="... category">    
+<form action="/requests/search" method="get">
+    <input type="text" name="search_cat" placeholder="... category">
+    <input type="text" name="start_location" placeholder="...your address">    
+    <input type="text" name="radius" placeholder="... radius in miles">   
     <button>submit</button> 
 </form>
 
-
-<h3>All locations that offer "<%= @search_cat %>"</h3>
-
-
-<% @search_locations.each do |search_location| %>
-    <li>                   
-        <%= search_location.name %>
-        <%= static_map_for(search_location) %>
-    </li>
-<% end %>
-<hr />
-<hr />
-
-Filter requests for location:
-
-<form action="/locations" method="get">
-    <input type="text" name="start_location" placeholder="... address">    
-    <input type="text" name="radius" placeholder="... radius in miles">
-    <button>submit</button> 
-</form>
-
-
-
-<hr />

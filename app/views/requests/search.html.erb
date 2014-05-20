@@ -1,0 +1,10 @@
+
+<h3>All requests for "<%= @search_cat %>" within a <%= @radius %> mile(s) Radius</h3>
+
+
+<% @requests.each do |request| %>
+    <li>                   
+        <%= request.title %>
+        <%= static_map_for(request.location) %>
+    </li>
+<% end %>

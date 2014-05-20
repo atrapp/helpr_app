@@ -16,11 +16,11 @@ Rails.application.routes.draw do
   ##########################################
 
   resources :users
-
-  # get 'users/:id' => 'users#show', as: 'user'
-
   resources :locations
   resources :categories
+
+  get '/requests/search' => 'requests#search'
+
   resources :requests
   resources :offers
 

@@ -1,49 +1,51 @@
 class RequestsController < ApplicationController
 
-  def index
-    @requests = Request.all
+ include StaticMapHelper
 
+ def index
+  @requests = Request.all
 
-    # @locations = Location.all
-    # @start_location  = params[:start_location]   
-    # @radius = params[:radius]
+  # if params[:start_location]
+  #   start_location = params[:start_location]
+  #   @radius = params[:radius]
+  #   @search_cat = params[:search_cat]
 
-    # if @start_location != nil && @radius != nil
-    #   @locations_within_radius  = Location.within(@radius, :origin => @start_location) 
-    #     else
-    #   @locations_within_radius = [] 
-    # end
+  #   nearby_locations = Location.within(@radius, origin: start_location)
+  #   potential_requests = nearby_locations.map { |location| location.requests }.flatten
+  #   @requests = potential_requests.select { |request| request.category.title == @search_cat}    
+  # end
+end
 
-    
+def search
+ if params[:start_location]
+    start_location = params[:start_location]
+    @radius = params[:radius]
     @search_cat = params[:search_cat]
-    @search_locations = []
 
-    @requests.each do |request|
-      title = request.category.title
-
-      if request.category.title == @search_cat
-           @search_locations << request.location
-      end
-    end
+    nearby_locations = Location.within(@radius, origin: start_location)
+    potential_requests = nearby_locations.map { |location| location.requests }.flatten
+    @requests = potential_requests.select { |request| request.category.title == @search_cat}    
 
   end
+end
 
-  def new
-    unless current_user.nil?     
-      @request = Request.new
-    else
-      redirect_to log_in_path, alert: 'Log-In Failed'
-    end
+
+def new
+  unless current_user.nil?     
+    @request = Request.new
+  else
+    redirect_to log_in_path, alert: 'Log-In Failed'
   end
+end
 
-  def create    
-    @request = Request.create(request_params)
+def create    
+  @request = Request.create(request_params)
 
-    if @request.save
-      redirect_to request_path(@request)
-    else
-      render 'new'
-    end
+  if @request.save
+    redirect_to request_path(@request)
+  else
+    render 'new'
+  end
     # request = Request.create(request_params)
     # redirect_to request_path(request)    
   end
@@ -54,24 +56,24 @@ class RequestsController < ApplicationController
 
   def edit  
    unless current_user.nil?     
-      if current_user.id == Request.find(params[:id]).user_id || current_user.email == "admin@helpr.com"  
-        @request = Request.find(params[:id])
-      else 
-        redirect_to requests_path, alert: 'Only Author can update'
-      end
-    else
-      redirect_to log_in_path, alert: 'Log-In Failed'
+    if current_user.id == Request.find(params[:id]).user_id || current_user.email == "admin@helpr.com"  
+      @request = Request.find(params[:id])
+    else 
+      redirect_to requests_path, alert: 'Only Author can update'
     end
+  else
+    redirect_to log_in_path, alert: 'Log-In Failed'
   end
+end
 
-  def update
-    @request = Request.find(params[:id])
+def update
+  @request = Request.find(params[:id])
 
-    if @request.update(request_params)
-      redirect_to request_path(@request)
-    else
-      render 'edit'
-    end  
+  if @request.update(request_params)
+    redirect_to request_path(@request)
+  else
+    render 'edit'
+  end  
 
     # request = Request.find(params[:id])
     # request.update(request_params)

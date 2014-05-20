@@ -1,7 +1,5 @@
 class UsersController < ApplicationController
 
-  require 'carrierwave/orm/activerecord'
-
   def index
     @user = current_user
     @users = User.all
@@ -12,18 +10,13 @@ class UsersController < ApplicationController
   end
 
   def create
-  
-    user = User.create(user_params)
+    @user = User.create(user_params)
 
-# u = User.new
-# u.avatar = params[:file]
-# u.avatar = File.open('somewhere')
-# u.save!
-# u.avatar.url # => '/url/to/file.png'
-# u.avatar.current_path # => 'path/to/file.png'
-# u.avatar.identifier # => 'file.png'
-
-    redirect_to user_path(user)    
+    if @user.save
+      redirect_to user_path(@user)
+    else
+      render 'new'
+    end
   end
 
   def show
@@ -32,7 +25,7 @@ class UsersController < ApplicationController
 
   def edit
      unless current_user.nil?     
-      if current_user.id == User.find(params[:id]).id    
+      if current_user.id == User.find(params[:id]).id || current_user.email == "admin@helpr.com" 
         @user = User.find(params[:id])    
       else 
         redirect_to users_path, alert: 'Only Author can update'
@@ -43,23 +36,19 @@ class UsersController < ApplicationController
   end
 
   def update
-    user = User.find(params[:id])
+    @user = User.find(params[:id])
 
-# u = User.new
-# u.avatar = params[:file]
-# u.avatar = File.open('somewhere')
-# u.save!
-# u.avatar.url # => '/url/to/file.png'
-# u.avatar.current_path # => 'path/to/file.png'
-# u.avatar.identifier # => 'file.png'
-
-    user.update(user_params)
-    redirect_to user_path(user)
+    if @user.update(user_params)
+      redirect_to user_path(@user)
+    else
+      render 'edit'
+    end    
   end
 
   def destroy
     unless current_user.nil?     
-      if current_user.id == User.find(params[:id]).id   
+      if current_user.id == User.find(params[:id]).id || current_user.email == "admin@helpr.com" 
+        session[current_user.id] = nil
         User.delete(params[:id])   
         redirect_to users_path
       else 
@@ -74,7 +63,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :address, :gender, :age, :phone, :email, :description, :rating, :picUrl, :password, :password_confirmation) 
+    params.require(:user).permit(:name, :address, :gender, :age, :phone, :email, :email_confirmation, :description, :rating, :picUrl, :password, :password_confirmation) 
   end
 
 end

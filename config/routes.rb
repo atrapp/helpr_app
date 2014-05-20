@@ -2,30 +2,21 @@ Rails.application.routes.draw do
   
   root 'welcome#index'
 
-
-
-
   ############ Authentication ##############
-
-  # get 'users/new' => "users#new"
-  # post 'users' => "users#create"
-  # get 'users' => "users#index"
 
   get 'sessions/new' => 'sessions#new', as: 'log_in'
   post 'sessions' => 'sessions#create'
-  delete 'sessions' => 'sessions#destroy', as: 'log_out'
+  delete 'sessions' => 'sessions#destroy', as: 'log_out'  
 
   get 'profiles' => 'profiles#index'
 
-############################################
-
+  ##########################################
 
   resources :users
   resources :locations
   resources :categories
   resources :requests
   resources :offers
-
 
   # resources :users do 
   #   resources :requests, except: [:show, :index]

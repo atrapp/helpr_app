@@ -13,8 +13,15 @@ class OffersController < ApplicationController
   end
 
   def create
-    offer = Offer.create(offer_params)
-    redirect_to offer_path(offer)
+    @offer = Offer.create(offer_params)
+
+    if @offer.save
+      redirect_to offer_path(@offer)
+    else
+      render 'new'
+    end
+    # offer = Offer.create(offer_params)
+    # redirect_to offer_path(offer)
   end
 
   def show
@@ -23,7 +30,7 @@ class OffersController < ApplicationController
 
   def edit    
     unless current_user.nil?     
-      if current_user.id == Offer.find(params[:id]).user_id    
+      if current_user.id == Offer.find(params[:id]).user_id || current_user.email == "admin@helpr.com"  
         @offer = Offer.find(params[:id]) 
       else 
         redirect_to offers_path, alert: 'Only Author can update'
@@ -34,14 +41,23 @@ class OffersController < ApplicationController
   end
 
   def update
-    offer = Offer.find(params[:id])
-    offer.update(offer_params)
-    redirect_to offer_path(offer)
+
+    @offer = Offer.find(params[:id])
+
+    if @offer.update(offer_params)
+      redirect_to offer_path(@offer)
+    else
+      render 'edit'
+    end  
+
+    # offer = Offer.find(params[:id])
+    # offer.update(offer_params)
+    # redirect_to offer_path(offer)
   end
 
   def destroy
     unless current_user.nil?     
-      if current_user.id == Offer.find(params[:id]).user_id   
+      if current_user.id == Offer.find(params[:id]).user_id || current_user.email == "admin@helpr.com" 
         Offer.delete(params[:id])   
         redirect_to offers_path
       else 

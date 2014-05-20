@@ -13,8 +13,15 @@ class RequestsController < ApplicationController
   end
 
   def create    
-    request = Request.create(request_params)
-    redirect_to request_path(request)    
+    @request = Request.create(request_params)
+
+    if @request.save
+      redirect_to request_path(@request)
+    else
+      render 'new'
+    end
+    # request = Request.create(request_params)
+    # redirect_to request_path(request)    
   end
 
   def show
@@ -23,7 +30,7 @@ class RequestsController < ApplicationController
 
   def edit  
    unless current_user.nil?     
-      if current_user.id == Request.find(params[:id]).user_id    
+      if current_user.id == Request.find(params[:id]).user_id || current_user.email == "admin@helpr.com"  
         @request = Request.find(params[:id])
       else 
         redirect_to requests_path, alert: 'Only Author can update'
@@ -34,14 +41,22 @@ class RequestsController < ApplicationController
   end
 
   def update
-    request = Request.find(params[:id])
-    request.update(request_params)
-    redirect_to request_path(request)
+    @request = Request.find(params[:id])
+
+    if @request.update(request_params)
+      redirect_to request_path(@request)
+    else
+      render 'edit'
+    end  
+
+    # request = Request.find(params[:id])
+    # request.update(request_params)
+    # redirect_to request_path(request)
   end
 
   def destroy   
     unless current_user.nil?     
-      if current_user.id == Request.find(params[:id]).user_id   
+      if current_user.id == Request.find(params[:id]).user_id || current_user.email == "admin@helpr.com" 
         Request.delete(params[:id])   
         redirect_to requests_path
       else 

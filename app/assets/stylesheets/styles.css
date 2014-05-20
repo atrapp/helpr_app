@@ -16,32 +16,47 @@ body {
   margin: 0;
   padding: 0;
   color: black;
- /* background-color: #EBEBE0;*/
-/*  background: url("bg_pic.jpg") fixed center;
-  background-size: cover;   */  
+  /*background: url("bg_pic.jpg") fixed center;
+  background-size: cover;     */
 }
 
 .wrapper {
   margin: 0 auto;  
   padding: 0;
-  max-width: 960px; 
+  max-width: 800px; 
   min-height: 800px;
-  background-color: #EBEBE0;
+  background-color: rgba(0,0,255,0.1);
 }
 
-h1 {
-  margin: 0;
-  text-align: center;
+.header {
   background-color: orange;
 }
 
-.helpnav {
-  margin: 0 auto;
-  padding: 0;
-  max-width: 600px;
-  min-height: 800px;
-  background-color: blue;
+.logo {
+  float: left;
 }
+
+h1 {
+ 
+  margin: 0;
+  text-align: center;
+  
+}
+
+.login {
+  float: right;
+}
+
+nav.main {
+ 
+  float: left;
+}
+
+
+
+
+
+
 
 .nav {
     display: inline-block;
@@ -60,7 +75,7 @@ h1 {
 
 .nav a p {
   margin: 0;
-  padding; 0;
+  padding: 0;
 }
 
 .circle {
@@ -68,9 +83,18 @@ h1 {
   height: 200px;
   border-radius: 100%; 
   box-shadow: 10px 10px 50px #3B3B45; 
-  background-color: rgba(235,235,224,0.8); //#EBEBE0;
+ /* background-color: rgba(235,235,224,0.8); //#EBEBE0;*/
   margin: 50px 10px 10px 50px; 
   text-align: center;
+}
+
+.circle p {
+  padding-top: 120px;
+
+  font-size: 20px;
+  text-align: bottom;
+
+
 }
 
 .left {
@@ -81,11 +105,13 @@ h1 {
   float: right;
 }
 
-.request {  
+.request { 
+  background: url("sw304.jpg") center; 
   /*background-color: rgba(255,0,0,0.8);*/
 }
 
 .offer {   
+  background: url("sw305.jpg") center; 
   /*background-color: rgba(0,255,0,0.8);*/
 }
 

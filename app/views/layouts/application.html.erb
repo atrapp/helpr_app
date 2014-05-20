@@ -7,7 +7,38 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-    <div class="wrapper">
+
+  <div class="wrapper">
+    
+    <div class="header">   
+    <h1>Helpr!</h1>
+   
+      
+    <a class="logo" href="/"><%= image_tag "logo.gif" %></a>
+    </div>
+     <nav class="main">        
+        <a href="users">Users</a>
+        <a href="requests">Requests</a>
+        <a href="offers">Offers</a>
+        <a href="categories">Categories</a>
+        <a href="locations">Locations</a>
+      </nav>
+
+    <div class="content">
+
+
+
+      <div class="login">
+          <% if current_user %>
+            <p>
+              <%= current_user.email %> ... is great
+            </p>
+              <%= link_to "Log-Out", log_out_path, method: :delete %>
+          <% else%>
+              <%= link_to "Log-In", log_in_path %>
+              <%= link_to "Sign-Up", new_user_path %>
+          <% end %>
+      </div>
 
       <div>
         <h1>
@@ -20,6 +51,14 @@
 
       <%= yield %>
 
-    </div>
+      </div>
+
+
+    <footer>
+
+    </footer>
+
+  </div>
+
 </body>
 </html>

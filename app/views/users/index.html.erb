@@ -1,14 +1,6 @@
 <h2>All users</h2>
 
-<% if current_user %>
-  <p>
-    <%= current_user.email %> ... is great
-  </p>
-  <%= link_to "Log-Out", log_out_path, method: :delete %>
-<% else%>
-  <%= link_to "Log-In", log_in_path %>
-  <%= link_to "Sign-Up", new_user_path %>
-<% end %>
+
 
 
 <%= link_to "Create user", new_user_path %>

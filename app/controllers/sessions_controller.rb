@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
         session[:user_id] = user.id
         redirect_to root_path, notice: "Signed In as #{user.email}"
       else
-         redirect_to log_in_path, alert: 'Log-In Failed'
+        redirect_to log_in_path, alert: 'Log-In Failed'
       end
     
   end

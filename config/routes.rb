@@ -8,11 +8,17 @@ Rails.application.routes.draw do
   post 'sessions' => 'sessions#create'
   delete 'sessions' => 'sessions#destroy', as: 'log_out'  
 
+  # in case a user profile is being deleted without destroy the corresponding session:
+  get 'log_out' => 'sessions#destroy'
+
   get 'profiles' => 'profiles#index'
 
   ##########################################
 
   resources :users
+
+  # get 'users/:id' => 'users#show', as: 'user'
+
   resources :locations
   resources :categories
   resources :requests

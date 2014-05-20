@@ -17,7 +17,24 @@
 05/17/2014
 - added all controllers 
 - added all views
-- 
+
+05/18/2014
+- all controllers work
+- CRUD functionality for all 5 models work
+
+05/19/2014
+- authentication added
+- users can register with email and password
+- relation between models established
+- all users can view all requests and offers
+- requests and offers can only be updated/deleted by their authors
+- field types adjusted (e.g. text_area, email_field, radio_buttons, etc.)
+- carrierwave installed, for uploading pictures in the user profiles (not working yet)
+
+
+
+
+
 
 
 

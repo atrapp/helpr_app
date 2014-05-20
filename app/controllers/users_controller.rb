@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  require 'carrierwave/orm/activerecord'
+
   def index
     @user = current_user
     @users = User.all
@@ -10,7 +12,17 @@ class UsersController < ApplicationController
   end
 
   def create
+  
     user = User.create(user_params)
+
+# u = User.new
+# u.avatar = params[:file]
+# u.avatar = File.open('somewhere')
+# u.save!
+# u.avatar.url # => '/url/to/file.png'
+# u.avatar.current_path # => 'path/to/file.png'
+# u.avatar.identifier # => 'file.png'
+
     redirect_to user_path(user)    
   end
 
@@ -19,9 +31,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-  #   @user = User.find(params[:id])
-
-    unless current_user.nil?     
+     unless current_user.nil?     
       if current_user.id == User.find(params[:id]).id    
         @user = User.find(params[:id])    
       else 
@@ -34,14 +44,20 @@ class UsersController < ApplicationController
 
   def update
     user = User.find(params[:id])
+
+# u = User.new
+# u.avatar = params[:file]
+# u.avatar = File.open('somewhere')
+# u.save!
+# u.avatar.url # => '/url/to/file.png'
+# u.avatar.current_path # => 'path/to/file.png'
+# u.avatar.identifier # => 'file.png'
+
     user.update(user_params)
     redirect_to user_path(user)
   end
 
   def destroy
-    # User.delete(params[:id])   
-    # redirect_to users_path
-
     unless current_user.nil?     
       if current_user.id == User.find(params[:id]).id   
         User.delete(params[:id])   
@@ -53,6 +69,7 @@ class UsersController < ApplicationController
       redirect_to log_in_path, alert: 'Log-In Failed'
     end
   end
+
 
   private
 

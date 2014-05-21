@@ -10,7 +10,7 @@
     <% @requests.each do |request| %>     
 
         <tr>
-            <td>A Request from:</td>             
+            <td>From:</td>             
             <td><%= request.user.name %></td>            
         </tr> 
         <tr>
@@ -41,7 +41,7 @@
             <td><a href="/requests/<%= request.id %>"><button>SHOW</button></a></td>
             <td><a href="/requests/<%= request.id %>/edit"><button>EDIT</button></a></td>
         </tr>
-         <tr class="divider"><td colspan="2">.</td></tr>
+         <tr class="divider"><td colspan="2"></td></tr>
         
     <% end %>
 

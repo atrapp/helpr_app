@@ -123,6 +123,7 @@ nav.main a {
 table {
   margin: 0 auto;
   padding: 20px 50px;  
+  width: 500px;
   background-color: rgba(255,233,255,0.7);
 }
 table .divider {
@@ -130,6 +131,15 @@ table .divider {
   background: black;
   color: rgba(0,106,255,0.7); /*#006AFF;*/
   background: rgba(0,106,255,0.7); /*#006AFF;*/
+}
+
+.searchform {
+  margin: 0 auto;
+
+  padding: 20px 50px; 
+  max-width: 500px; 
+  background: gray;
+  text-align: center;
 }
 
 footer {

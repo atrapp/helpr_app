@@ -1,11 +1,13 @@
-<h2>Search requests</h2>
+<div class="searchform">
+    <h2>Search requests</h2>
 
-Filter requests by category and radius:
+    Filter requests by category and radius:
 
-<form action="/requests/search" method="get">
-    <%= select("search_cat", "category_title", Category.all.collect {|c| [ c.title, c.title ]})%>    
-    <input type="text" name="start_location" placeholder="... your address">    
-    <input type="text" name="radius" placeholder="... radius in miles">   
-    <button>submit</button> 
-</form>
+    <form action="/requests/search" method="get">
+        <%= select("search_cat", "category_title", Category.all.collect {|c| [ c.title, c.title ]})%>    
+        <input type="text" name="start_location" placeholder="... your address">    
+        <input type="text" name="radius" placeholder="... radius in miles">   
+        <button>Search</button> 
+    </form>
+</div>
 

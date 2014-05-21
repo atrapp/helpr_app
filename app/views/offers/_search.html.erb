@@ -1,10 +1,12 @@
-<h2>Search offers</h2>
+<div class="searchform">
+    <h2>Search offers</h2>
 
-Filter offers by category and radius:
+    Filter offers by category and radius:
 
-<form action="/offers/search" method="get">
-    <%= select("search_cat", "category_title", Category.all.collect {|c| [ c.title, c.title ]})%>    
-    <input type="text" name="start_location" placeholder="... your address">    
-    <input type="text" name="radius" placeholder="... radius in miles">   
-    <button>submit</button> 
-</form>
+    <form action="/offers/search" method="get">
+        <%= select("search_cat", "category_title", Category.all.collect {|c| [ c.title, c.title ]})%>    
+        <input type="text" name="start_location" placeholder="... your address">    
+        <input type="text" name="radius" placeholder="... radius in miles">   
+        <button>Search</button> 
+    </form>
+</div>

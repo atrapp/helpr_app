@@ -10,7 +10,7 @@
     <% @offers.each do |offer| %>     
  
         <tr>
-            <td>An Offer from:</td>             
+            <td>From:</td>             
             <td><%= offer.user.name %></td>            
         </tr>
         <tr>
@@ -41,7 +41,7 @@
             <td><a href="/offers/<%= offer.id %>"><button>SHOW</button></a></td>
             <td><a href="/offers/<%= offer.id %>/edit"><button>EDIT</button></a></td>
         </tr>
-        <tr class="divider"><td colspan="2">.</td></tr>
+        <tr class="divider"><td colspan="2"></td></tr>
         
     <% end %>
 

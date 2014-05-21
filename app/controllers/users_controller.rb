@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-     unless current_user.nil?     
+    unless current_user.nil?     
       if current_user.id == User.find(params[:id]).id || current_user.email == "admin@helpr.com" 
         @user = User.find(params[:id])    
       else 
@@ -59,6 +59,14 @@ class UsersController < ApplicationController
     end
   end
 
+  def search
+    unless current_user.nil?  
+      search_type = params[:t]
+      potential_results = Offer.all if search_type == "offer"
+      potential_results = Request.all if search_type == "request"      
+      @results = potential_results.select { |result| result.user_id == current_user.id} 
+    end
+  end
 
   private
 

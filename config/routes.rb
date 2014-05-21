@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   # get 'users/:id/edit' => 'users#edit'
   # put 'users/:id' => 'users#update'
   # delete 'users/:id' => 'users#destroy'
+  get '/users/search' => 'users#search'
   resources :users
 
   get '/locations/search' => 'locations#search'
@@ -40,8 +41,7 @@ Rails.application.routes.draw do
   #   resources :offers, except: [:show, :index]
   # end
 
-
-   get 'tests' => 'tests#index'
+  get 'tests' => 'tests#index'
 
 end
 

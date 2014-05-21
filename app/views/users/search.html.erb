@@ -1,0 +1,15 @@
+
+<h3><%= @results.count %> Results</h3>
+
+<ol>
+<% @results.each do |result| %>
+    <li>                   
+        <h3><%= result.title %></h3>        
+        <p><%= result.description %></p>
+        <p>from: <%= result.date_start %> until: <%= result.date_end %></p>
+        <p>Address: <%= result.location.address %></p>
+        <p><%= result.location.address %></p>
+        <%= static_map_for(result.location) %>
+    </li>
+<% end %>
+</ol>

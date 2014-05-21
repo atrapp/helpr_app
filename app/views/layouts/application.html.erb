@@ -33,6 +33,8 @@
             </p>
               <%= link_to "Log-Out", log_out_path, method: :delete %>
               <%= link_to "User-Profile",  "/users/#{current_user.id}" %>
+              <%= link_to "Offers", "/users/search?t=offer" %>
+              <%= link_to "Requests", "/users/search?t=request" %>
           <% else%>
               <%= link_to "Log-In", log_in_path %>
               <%= link_to "Sign-Up", new_user_path %>

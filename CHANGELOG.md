@@ -31,6 +31,18 @@
 - field types adjusted (e.g. text_area, email_field, radio_buttons, etc.)
 - carrierwave installed, for uploading pictures in the user profiles (not working yet)
 
+05/20/2014
+- carrierwave removed (instead plan using Gravatar)
+- authentication improved (when logged in, user can access his own profile)
+- field validation added
+- search function for requests, offers and locations implemented (based on flexible start location and radius)
+- show pages - more details added
+- basic css styling
+- user can, when logged in, filter their own requests or offers
+
+
+
+
 
 
 

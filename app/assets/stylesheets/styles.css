@@ -12,14 +12,6 @@ Developer @GA in NYC
      box-sizing: border-box; /* IE */
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  color: black;
-  background: url("/assets/sunrise.jpg") fixed center;
-  background-size: cover;   
-}
-
 .wrapper {
   margin: 0 auto;  
   padding: 0;

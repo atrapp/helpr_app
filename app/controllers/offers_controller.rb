@@ -4,6 +4,20 @@ class OffersController < ApplicationController
     @offers = Offer.all
   end
 
+  def search
+    @search_cat = params[:search_cat].values.first 
+    @start_location = params[:start_location]
+    @radius = params[:radius]
+      
+    if @search_cat !="" && @start_location !="" && @radius !="" 
+      nearby_locations = Location.within(@radius, origin: @start_location)
+      potential_offers = nearby_locations.map { |location| location.offers }.flatten
+      @offers = potential_offers.select { |offer| offer.category.title == @search_cat} 
+      else
+        redirect_to offers_path
+    end
+  end
+
   def new   
     unless current_user.nil?     
        @offer = Offer.new

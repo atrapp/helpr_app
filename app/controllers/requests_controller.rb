@@ -18,7 +18,6 @@ def search
   end
 end
 
-
 def new
   unless current_user.nil?     
     @request = Request.new
@@ -35,16 +34,14 @@ def create
   else
     render 'new'
   end
-    # request = Request.create(request_params)
-    # redirect_to request_path(request)    
-  end
+end
 
-  def show
-    @request = Request.find(params[:id])
-  end
+def show
+  @request = Request.find(params[:id])
+end
 
-  def edit  
-   unless current_user.nil?     
+def edit  
+  unless current_user.nil?     
     if current_user.id == Request.find(params[:id]).user_id || current_user.email == "admin@helpr.com"  
       @request = Request.find(params[:id])
     else 

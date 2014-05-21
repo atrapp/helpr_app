@@ -20,8 +20,9 @@ Rails.application.routes.draw do
   resources :categories
 
   get '/requests/search' => 'requests#search'
-
   resources :requests
+  
+  get '/offers/search' => 'offers#search'  
   resources :offers
 
   # resources :users do 

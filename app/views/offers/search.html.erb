@@ -1,0 +1,20 @@
+
+<h3><%= @offers.count %> results for your search</h3>
+<h4>Category: <%= @search_cat %></h4>
+<h4>Radius: <%= @radius %> mile(s)</h4>
+<h4>Your address: <%= @start_location %></h4>
+
+<ol>
+<% @offers.each do |offer| %>
+    <li>                   
+        <h3><%= offer.title %></h3>
+        <p><%= offer.user.name %></p>
+        <p><%= offer.user.email %></p>
+        <p><%= offer.description %></p>
+        <p><%= offer.date_start %></p>
+        <p><%= offer.date_end %></p>
+        <p><%= offer.location.address %></p>
+        <%= static_map_for(offer.location) %>
+    </li>
+<% end %>
+</ol>

@@ -1,31 +1,20 @@
 class RequestsController < ApplicationController
 
- include StaticMapHelper
-
  def index
   @requests = Request.all
-
-  # if params[:start_location]
-  #   start_location = params[:start_location]
-  #   @radius = params[:radius]
-  #   @search_cat = params[:search_cat]
-
-  #   nearby_locations = Location.within(@radius, origin: start_location)
-  #   potential_requests = nearby_locations.map { |location| location.requests }.flatten
-  #   @requests = potential_requests.select { |request| request.category.title == @search_cat}    
-  # end
 end
 
 def search
- if params[:start_location]
-    start_location = params[:start_location]
-    @radius = params[:radius]
-    @search_cat = params[:search_cat]
-
-    nearby_locations = Location.within(@radius, origin: start_location)
+  @search_cat = params[:search_cat].values.first 
+  @start_location = params[:start_location]
+  @radius = params[:radius]
+    
+  if @search_cat !="" && @start_location !="" && @radius !="" 
+    nearby_locations = Location.within(@radius, origin: @start_location)
     potential_requests = nearby_locations.map { |location| location.requests }.flatten
-    @requests = potential_requests.select { |request| request.category.title == @search_cat}    
-
+    @requests = potential_requests.select { |request| request.category.title == @search_cat} 
+    else
+      redirect_to requests_path
   end
 end
 

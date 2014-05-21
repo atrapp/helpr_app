@@ -1,19 +1,46 @@
 <h2>Offer Data</h2>
 
 <table>
-
+        <!--  user data -->
         <tr>
-            <td>An Offer from:</td>             
+            <td colspan="2">---- About User ----</td>           
+        </tr> 
+        <tr>
+            <td>Name:</td>             
             <td><%= @offer.user.name %></td>            
+        </tr>    
+        <tr>
+            <td>Gender:</td>             
+            <td><%= @offer.user.gender %></td>            
+        </tr>
+        <tr>
+            <td>Age:</td>             
+            <td><%= @offer.user.age %></td>            
+        </tr> 
+        <tr>
+            <td>Phone:</td>             
+            <td><%= @offer.user.phone %></td>            
+        </tr>  
+        <tr>
+            <td>Email:</td>             
+            <td><%= @offer.user.email %></td>            
+        </tr> 
+        <tr>
+            <td colspan="2"><%= @offer.user.description %></td>                       
+        </tr> 
+
+        <!--  offer data -->
+        <tr>
+            <td colspan="2">---- About Offer ----</td>           
+        </tr> 
+        <tr>
+            <td>Category:</td>             
+            <td><%= @offer.category.title %></td>            
         </tr>
         <tr>
             <td>Title:</td>             
             <td><%= @offer.title %></td>            
-        </tr>
-        <tr>
-            <td>Description:</td>
-            <td><%= @offer.description %></td>
-        </tr>
+        </tr>        
         <tr>
             <td>Date start:</td>             
             <td><%= @offer.date_start %></td>            
@@ -21,14 +48,33 @@
         <tr>
             <td>Date end:</td>             
             <td><%= @offer.date_end %></td>            
-        </tr>        
+        </tr>  
         <tr>
-            <td>Category:</td>             
-            <td><%= @offer.category.title %></td>            
-        </tr>
+            <td colspan="2"><%= @offer.description %></td>           
+        </tr>    
+
+         <!--  location data --> 
+        <tr>
+            <td colspan="2">---- About Location ----</td>           
+        </tr>           
         <tr>
             <td>Location:</td>             
             <td><%= @offer.location.name %></td>            
+        </tr>
+        <tr>
+            <td>Address:</td>             
+            <td><%= @offer.location.address %></td>            
+        </tr>
+        <tr>
+            <td>Category:</td>             
+            <td><%= @offer.location.cat %></td>            
+        </tr>
+         <tr>
+            <td>Public?:</td>             
+            <td><%= @offer.location.public %></td>            
+        </tr>
+        <tr>     
+            <td colspan="2"><%= static_map_for(@offer.location) %></td>
         </tr>
         
 </table>

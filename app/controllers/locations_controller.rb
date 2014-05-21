@@ -22,8 +22,13 @@ class LocationsController < ApplicationController
   end
 
   def create
-    location = Location.create(location_params)
-    redirect_to location_path(location)
+    @location = Location.create(location_params)
+
+    if @location.save
+      redirect_to location_path(@location)
+    else
+      render 'new'
+    end   
   end
 
   def show
@@ -35,9 +40,13 @@ class LocationsController < ApplicationController
   end
 
   def update
-    location = Location.find(params[:id])
-    location.update(location_params)
-    redirect_to location_path(location)
+    @location = Location.find(params[:id])
+
+    if @location.update(location_params)
+      redirect_to location_path(@location)
+    else
+      render 'edit'
+    end     
   end
 
   def destroy

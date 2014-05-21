@@ -1,0 +1,14 @@
+
+<% if @location.errors.any? %>
+  <div id="errors">
+    <p class="error-count">
+      The form contains <%= pluralize(@location.errors.count, "error") %>.
+    </p>
+    <ul class="error-list">
+    <% @location.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+

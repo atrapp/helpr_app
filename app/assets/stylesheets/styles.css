@@ -16,8 +16,8 @@ body {
   margin: 0;
   padding: 0;
   color: black;
-  background: url("bg_pic.jpg") fixed center;
-  background-size: cover;     
+  background: url("sunrise.jpg") fixed center;
+  background-size: cover;   
 }
 
 .wrapper {
@@ -25,7 +25,7 @@ body {
   padding: 0;
   max-width: 800px; 
   min-height: 800px;
-  background-color: rgba(0,0,255,0.1);
+  background-color: rgba(255,233,255,0.5);*/
 }
 
 .header {
@@ -106,13 +106,13 @@ nav.main {
 }
 
 .request { 
-  background: url("sw304.jpg") center; 
-  /*background-color: rgba(255,0,0,0.8);*/
+  /*background: url("sw304.jpg") center; */
+  background-color: #FF9729;
 }
 
 .offer {   
-  background: url("sw305.jpg") center; 
-  /*background-color: rgba(0,255,0,0.8);*/
+ /* background: url("sw305.jpg") center; */
+  background-color: #2991FF;
 }
 
 

@@ -16,7 +16,7 @@ body {
   margin: 0;
   padding: 0;
   color: black;
-  background: url("sunrise.jpg") fixed center;
+  background: url("/assets/sunrise.jpg") fixed center;
   background-size: cover;   
 }
 

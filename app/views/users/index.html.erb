@@ -2,8 +2,8 @@
 
 <table>
 
-    <% @users.each do |user| %>
-     
+    <% @users.each do |user| %>     
+ 
         <tr>            
             <td colspan="2"><%= gravatar_for user %></td>
         </tr>     
@@ -39,13 +39,15 @@
             <td>Rating:</td>
             <td><%= user.rating %></td>
         </tr>        
+        
         <tr>  
             <td><a href="/users/<%= user.id %>"><button>SHOW</button></a></td>
             <td><a href="/users/<%= user.id %>/edit"><button>EDIT</button></a></td>
         </tr>
-
+        <tr class="divider"><td colspan="2">.</td></tr>
         
     <% end %>
 
 </table>
+
 

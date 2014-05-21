@@ -120,6 +120,18 @@ nav.main a {
   /* background-color: #2991FF; blue */
 }
 
+table {
+  margin: 0 auto;
+  padding: 20px 50px;  
+  background-color: rgba(255,233,255,0.7);
+}
+table .divider {
+  padding-bottom: 10px;
+  background: black;
+  color: rgba(0,106,255,0.7); /*#006AFF;*/
+  background: rgba(0,106,255,0.7); /*#006AFF;*/
+}
+
 footer {
   clear: both;
   margin: 0;
@@ -138,12 +150,12 @@ footer .copyright {
 
 /* Clear fix hack */
 .clearfix:after {
-     content: ".";
-     display: block;
-     clear: both;
-     visibility: hidden;
-     line-height: 0;
-     height: 0;
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
 }
 
 .clear {

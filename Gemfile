@@ -47,5 +47,5 @@ gem 'geokit-rails'
 
 gem 'gravatar'
 
-
+gem 'rails_12factor'
 

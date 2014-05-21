@@ -108,14 +108,15 @@ nav.main a {
 .request {
   float: left;
   margin: 20px;
-  background: url("sw304.jpg") center; 
+  /*background: url("sw304.jpg") center; */
+  background: image-url("sw304.jpg") center;
   /*background-color: #FF9729; orange */
 }
 
 .offer {  
   float: left; 
   margin: 20px;
-  background: url("sw305.jpg") center; 
+  background: image-url("sw305.jpg") center; 
   /* background-color: #2991FF; blue */
 }
 

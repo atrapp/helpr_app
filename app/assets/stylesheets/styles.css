@@ -1,4 +1,4 @@
-* 
+/* 
 Project Name: Helpr App
 Client: General Assembly 
 Author: Andrea Trapp
@@ -16,8 +16,8 @@ body {
   margin: 0;
   padding: 0;
   color: black;
-  /*background: url("bg_pic.jpg") fixed center;
-  background-size: cover;     */
+  background: url("bg_pic.jpg") fixed center;
+  background-size: cover;     
 }
 
 .wrapper {

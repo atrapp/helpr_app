@@ -45,5 +45,7 @@ end
 
 gem 'geokit-rails'
 
+gem 'gravatar'
+
 
 

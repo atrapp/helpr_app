@@ -6,6 +6,9 @@
             <td colspan="2">---- About User ----</td>           
         </tr> 
         <tr>
+            <td colspan="2"><%= gravatar_for @request.user %></td>
+        </tr>    
+        <tr>
             <td>Name:</td>             
             <td><%= @request.user.name %></td>            
         </tr>    

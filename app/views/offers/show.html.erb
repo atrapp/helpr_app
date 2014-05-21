@@ -4,7 +4,10 @@
         <!--  user data -->
         <tr>
             <td colspan="2">---- About User ----</td>           
-        </tr> 
+        </tr>
+        <tr>
+            <td colspan="2"><%= gravatar_for @offer.user %></td>
+        </tr>    
         <tr>
             <td>Name:</td>             
             <td><%= @offer.user.name %></td>            

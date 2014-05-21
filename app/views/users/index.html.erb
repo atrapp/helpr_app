@@ -4,6 +4,9 @@
 
     <% @users.each do |user| %>
      
+        <tr>            
+            <td colspan="2"><%= gravatar_for user %></td>
+        </tr>     
         <tr>
             <td>Name:</td>             
             <td><%= user.name %></td>            
@@ -35,15 +38,12 @@
         <tr>
             <td>Rating:</td>
             <td><%= user.rating %></td>
-        </tr>
-        <tr>
-            <td>Image:</td>
-            <td><%= user.image %></td>
-        </tr>
+        </tr>        
         <tr>  
             <td><a href="/users/<%= user.id %>"><button>SHOW</button></a></td>
             <td><a href="/users/<%= user.id %>/edit"><button>EDIT</button></a></td>
         </tr>
+
         
     <% end %>
 

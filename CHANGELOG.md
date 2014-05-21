@@ -39,6 +39,8 @@
 - show pages - more details added
 - basic css styling
 - user can, when logged in, filter their own requests or offers
+- Gravatar installed
+
 
 
 

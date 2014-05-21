@@ -4,15 +4,17 @@ class LocationsController < ApplicationController
 
   def index
     @locations = Location.all
+  end
+    
+  def search
     @start_location  = params[:start_location]   
     @radius = params[:radius]
 
     if @start_location != nil && @radius != nil
-      @locations_within_radius  = Location.within(@radius, :origin => @start_location) 
-        else
-      @locations_within_radius = [] 
+      @locations  = Location.within(@radius, :origin => @start_location) 
+    else
+      redirect_to locations_path
     end
-
   end
 
   def new
@@ -48,6 +50,5 @@ class LocationsController < ApplicationController
   def location_params
     params.require(:location).permit(:name, :address, :cat, :public, :lng, :lat) 
   end
-
 
 end

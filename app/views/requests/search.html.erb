@@ -11,9 +11,8 @@
         <p><%= request.user.name %></p>
         <p><%= request.user.email %></p>
         <p><%= request.description %></p>
-        <p><%= request.date_start %></p>
-        <p><%= request.date_end %></p>
-        <p><%= request.location.address %></p>
+        <p>from: <%= request.date_start %> until: <%= request.date_end %></p>
+        <p>Address: <%= request.location.address %></p>
         <%= static_map_for(request.location) %>
     </li>
 <% end %>

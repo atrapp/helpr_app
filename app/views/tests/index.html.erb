@@ -8,6 +8,8 @@
     Always use "GET" as the method for search forms. This allows users to bookmark a specific search and get back to it. More generally Rails encourages you to use the right HTTP verb for an action.
 </p>
 
+<hr />
+
 <%= form_tag("/search", method: "get") do %>
   <%= label_tag(:q, "Search for:") %>
   <%= text_field_tag(:q) %>
@@ -71,21 +73,3 @@ range_field<br />
 <%= range_field(:product, :discount, in: 1..100) %>
 <hr />
 
-
-
-<hr />
-
-
-
-
-<hr />
-
-
-
-
-<hr />
-
-
-
-
-<hr />

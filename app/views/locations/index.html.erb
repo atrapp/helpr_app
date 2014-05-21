@@ -2,25 +2,8 @@
 
 <%= link_to "Create location", new_location_path %>
 
-<form action="/locations" method="get">
-    <input type="text" name="start_location" placeholder="... address">    
-    <input type="text" name="radius" placeholder="... radius in miles">
-    <button>submit</button> 
-</form>
+<%= render 'search' %>
 
-
-
-<h3>All locations around "<%= @start_location %>" within a <%= @radius %> mile(s) Radius</h3>
-
-
-<% @locations_within_radius.each do |location_within_radius| %>
-    <li>                   
-        <%= location_within_radius.name %>
-        <%= static_map_for(location_within_radius) %>
-    </li>
-<% end %>
-
-<hr/>
 
 <table>
 

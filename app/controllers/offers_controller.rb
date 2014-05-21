@@ -13,8 +13,8 @@ class OffersController < ApplicationController
       nearby_locations = Location.within(@radius, origin: @start_location)
       potential_offers = nearby_locations.map { |location| location.offers }.flatten
       @offers = potential_offers.select { |offer| offer.category.title == @search_cat} 
-      else
-        redirect_to offers_path
+    else
+      redirect_to offers_path
     end
   end
 
@@ -33,9 +33,7 @@ class OffersController < ApplicationController
       redirect_to offer_path(@offer)
     else
       render 'new'
-    end
-    # offer = Offer.create(offer_params)
-    # redirect_to offer_path(offer)
+    end    
   end
 
   def show
@@ -55,7 +53,6 @@ class OffersController < ApplicationController
   end
 
   def update
-
     @offer = Offer.find(params[:id])
 
     if @offer.update(offer_params)
@@ -63,10 +60,6 @@ class OffersController < ApplicationController
     else
       render 'edit'
     end  
-
-    # offer = Offer.find(params[:id])
-    # offer.update(offer_params)
-    # redirect_to offer_path(offer)
   end
 
   def destroy

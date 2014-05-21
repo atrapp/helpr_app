@@ -11,8 +11,8 @@
         <p><%= offer.user.name %></p>
         <p><%= offer.user.email %></p>
         <p><%= offer.description %></p>
-        <p><%= offer.date_start %></p>
-        <p><%= offer.date_end %></p>
+        <p>from: <%= offer.date_start %> until: <%= offer.date_end %></p>
+        <p>Address: <%= offer.location.address %></p>
         <p><%= offer.location.address %></p>
         <%= static_map_for(offer.location) %>
     </li>

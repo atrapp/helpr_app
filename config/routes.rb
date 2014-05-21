@@ -14,9 +14,19 @@ Rails.application.routes.draw do
   get 'profiles' => 'profiles#index'
 
   ##########################################
-
+  
+  # get 'users' => 'users#index'
+  # get 'users/new' => 'users#new'
+  # post 'users' => 'users#create'
+  # get 'users/:id' => 'users#show', as: 'user'
+  # get 'users/:id/edit' => 'users#edit'
+  # put 'users/:id' => 'users#update'
+  # delete 'users/:id' => 'users#destroy'
   resources :users
+
+  get '/locations/search' => 'locations#search'
   resources :locations
+
   resources :categories
 
   get '/requests/search' => 'requests#search'
@@ -35,10 +45,3 @@ Rails.application.routes.draw do
 
 end
 
-  # get 'users' => 'users#index'
-  # get 'users/new' => 'users#new'
-  # post 'users' => 'users#create'
-  # get 'users/:id' => 'users#show', as: 'user'
-  # get 'users/:id/edit' => 'users#edit'
-  # put 'users/:id' => 'users#update'
-  # delete 'users/:id' => 'users#destroy'

@@ -25,7 +25,7 @@ body {
   padding: 0;
   max-width: 800px; 
   min-height: 800px;
-  background-color: rgba(255,233,255,0.5);*/
+  background-color: rgba(255,233,255,0.5);
 }
 
 .header {
@@ -36,27 +36,18 @@ body {
   float: left;
 }
 
-h1 {
- 
+h1 { 
   margin: 0;
-  text-align: center;
-  
+  text-align: center;  
 }
 
 .login {
   float: right;
 }
 
-nav.main {
- 
+nav.main { 
   float: left;
 }
-
-
-
-
-
-
 
 .nav {
     display: inline-block;
@@ -70,7 +61,6 @@ nav.main {
 .nav a {
  text-decoration: none;
  font-size: 20px;
-
 }
 
 .nav a p {
@@ -93,8 +83,6 @@ nav.main {
 
   font-size: 20px;
   text-align: bottom;
-
-
 }
 
 .left {

@@ -41,6 +41,13 @@
 - user can, when logged in, filter their own requests or offers
 - Gravatar installed
 
+05/21/2014
+- Gravatar implemented (incl. registration of Test-Accounts with www.gravatar.com)
+- CSS Styling
+- Testing
+- Push to Heroku
+
+
 
 
 

@@ -61,9 +61,9 @@ class UsersController < ApplicationController
 
   def search
     unless current_user.nil?  
-      search_type = params[:t]
-      potential_results = Offer.all if search_type == "offer"
-      potential_results = Request.all if search_type == "request"      
+      @search_type = params[:t]
+      potential_results = Offer.all if @search_type == "offer"
+      potential_results = Request.all if @search_type == "request"      
       @results = potential_results.select { |result| result.user_id == current_user.id} 
     end
   end

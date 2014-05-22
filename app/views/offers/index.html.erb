@@ -1,7 +1,5 @@
 <h2>All offers</h2>
 
-<%= link_to "Create offer", new_offer_path %>
-
 <%= render 'search' %>
 
 
@@ -41,7 +39,7 @@
             <td><a href="/offers/<%= offer.id %>"><button>SHOW</button></a></td>
             <td><a href="/offers/<%= offer.id %>/edit"><button>EDIT</button></a></td>
         </tr>
-        <tr class="divider"><td colspan="2"></td></tr>
+        <tr class="divider"><td colspan="2">.</td></tr>
         
     <% end %>
 

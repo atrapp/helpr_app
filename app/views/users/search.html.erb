@@ -1,6 +1,12 @@
 
 <h3><%= @results.count %> Results</h3>
 
+<% if @search_type == "request" %>
+    <p class="create"><%= link_to "Create request", new_request_path %></p>
+    <% else %>
+    <p class="create"><%= link_to "Create offer", new_offer_path %></p>
+<% end %>
+
 <ol>
 <% @results.each do |result| %>
     <li>                   

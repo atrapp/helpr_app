@@ -3,7 +3,7 @@ wdi-project1
 
 http://wdi-project1-helpr.herokuapp.com/
 
-https://github.com/atrapp/wdi-project1/blob/master/README.md
+https://github.com/atrapp/wdi-project1
 
 Title
 =====
@@ -11,9 +11,15 @@ Helpr!
 
 Description
 ===========
-Here you can create requests or offers of help in different categories (e.g. Computer, Shopping, Pets etc.) at public locations which you can search within a radius of your given address.
+A Web App for finding, requesting or offering help in different categories (e.g. Computer, Shopping, Pets etc.).
 
 http://imgur.com/MFAT4VW
+
+
+Inline-style: 
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![alt text](https://github.com/atrapp/wdi-project1/blob/master/app/assets/images/helpr.png "Screen Hompage")
+
 
 
 API

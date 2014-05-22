@@ -17,7 +17,6 @@ http://imgur.com/MFAT4VW
 
 
 Inline-style: 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
 ![alt text](https://github.com/atrapp/wdi-project1/blob/master/app/assets/images/helpr.png "Screen Hompage")
 
 

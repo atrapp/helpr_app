@@ -1,6 +1,9 @@
 wdi-project1
 ============
 
+http://wdi-project1-helpr.herokuapp.com/
+https://github.com/atrapp/wdi-project1/blob/master/README.md
+
 Title
 =====
 Helpr!
@@ -9,7 +12,8 @@ Description
 ===========
 Here you can create requests or offers of help in different categories (e.g. Computer, Shopping, Pets etc.) at public locations which you can search within a radius of your given address.
 
-http://imgur.com/MFAT4VW
+![alt text](http://imgur.com/MFAT4VW "Screenshot")
+
 
 API
 ===

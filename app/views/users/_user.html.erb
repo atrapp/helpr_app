@@ -1,44 +1,48 @@
 <%= render 'errors' %>
 
-<%= form_for @user do |f| %>
+<div class="container">
 
-    <%= f.label :name %>
-    <%= f.text_field :name %><br />            
-    
-    <%= f.label :address %>
-    <%= f.text_field :address %><br />
-  
-    <%= f.label :gender %>
-    <%= radio_button("user", "gender", "female") %>
-    <%= f.label(:gender, "female") %>    
-    <%= radio_button("user", "gender", "male") %>
-    <%= f.label(:gender, "male") %><br />
-    
-    <%= f.label :age %>
-    <%= f.text_field :age %><br />
-  
-    <%= f.label :phone %>
-    <%= f.telephone_field :phone %><br />    
-    
-    <%= f.label :email %>
-    <%= f.email_field :email %><br />
+    <%= form_for @user do |f| %>
 
-    <%= f.label :email_confirmation %>
-    <%= f.email_field :email_confirmation %><br />
+        <%= f.label :name %>
+        <%= f.text_field :name %><br />            
         
-    <%= f.label :description %><br />
-    <%= f.text_area(:description, size: "24x6") %><br />  
-   
-   <!--  <%= f.label :rating %>
-    <%= f.text_field :rating %><br /> -->   
+        <%= f.label :address %>
+        <%= f.text_field :address %><br />
       
-    <%= f.label :password %>
-    <%= f.password_field :password %><br />
+        <%= f.label :gender %>
+        <%= radio_button("user", "gender", "female") %>
+        <%= f.label(:gender, "female") %>    
+        <%= radio_button("user", "gender", "male") %>
+        <%= f.label(:gender, "male") %><br />
+        
+        <%= f.label :age %>
+        <%= f.text_field :age %><br />
+      
+        <%= f.label :phone %>
+        <%= f.telephone_field :phone %><br />    
+        
+        <%= f.label :email %>
+        <%= f.email_field :email %><br />
 
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %><br />
-     
-    <%= f.submit %>       
+        <%= f.label :email_confirmation %>
+        <%= f.email_field :email_confirmation %><br />
+            
+        <%= f.label :description %><br />
+        <%= f.text_area(:description, size: "24x6") %><br />  
+       
+       <!--  <%= f.label :rating %>
+        <%= f.text_field :rating %><br /> -->   
+          
+        <%= f.label :password %>
+        <%= f.password_field :password %><br />
 
-<% end %>
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation %><br />
+         
+        <%= f.submit %>       
+
+    <% end %>
+    
+</div>
 

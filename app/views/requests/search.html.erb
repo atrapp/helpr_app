@@ -7,19 +7,42 @@
     <h4>Your address: <%= @start_location %></h4>
 </div>
 
-<div class="container">
-    <ol>
-    <% @requests.each do |request| %>
-        <li>                   
-            <h3><%= request.title %></h3>
-            <p><%= request.user.name %></p>
-            <p><%= request.user.email %></p>
-            <p><%= request.description %></p>
-            <p>from: <%= request.date_start %> until: <%= request.date_end %></p>
-            <p>Address: <%= request.location.address %></p>
-            <%= static_map_for(request.location) %>
-        </li>
-        <hr />
-    <% end %>
-    </ol>
-</div>
+<% @requests.each do |request| %>
+
+    <table>
+        <section>  
+            <tr>
+                <td colspan="2"><h3><%= request.title %></h3></td>                          
+            </tr>
+            <tr>
+                <td>From:</td>             
+                <td><%= request.user.name %></td>            
+            </tr> 
+            <tr>
+                <td>Email:</td>             
+                <td><%= request.user.email %></td>            
+            </tr>             
+            <tr>
+                <td>Description:</td>
+                <td><%= request.description %></td>
+            </tr>
+            <tr>
+                <td>Date start:</td>             
+                <td><%= request.date_start %></td>            
+            </tr>
+            <tr>
+                <td>Date end:</td>             
+                <td><%= request.date_end %></td>            
+            </tr>            
+            <tr>
+                <td>Location:</td>             
+                <td><%= request.location.name %></td>            
+            </tr>           
+            <tr>  
+                <td><a href="/requests/<%= request.id %>"><button>SHOW</button></a></td>
+            </tr>
+
+        </section>
+    </table>
+<% end %>
+   

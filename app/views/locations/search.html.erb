@@ -6,17 +6,27 @@
     <h4>Your address: <%= @start_location %></h4>
 </div>
 
-<div class="container">
-    <ol>
-    <% @locations.each do |location| %>
-        <li>                   
-            <h3><%= location.name %></h3>
-            <p>(<%= location.cat %>)</p>
-            <p>Public? <%= location.public %></p>
-            <p>Address: <%= location.address %></p>
-            <%= static_map_for(location) %>
-        </li>
-        <hr />
-    <% end %>
-    </ol>
-</div>
+
+<% @locations.each do |location| %>
+
+   <table>
+        <section> 
+            <tr>
+                <td>Name:</td>             
+                <td><%= location.name %></td>            
+            </tr>
+            <tr>
+                <td>Address:</td>
+                <td><%= location.address %></td>
+            </tr>            
+            <tr>     
+                <td colspan="2"><%= static_map_for(location) %></td>
+            </tr>
+            <tr>  
+                <td><a href="/locations/<%= location.id %>"><button>SHOW</button></a></td>               
+            </tr>            
+
+        </section>
+    </table>
+
+<% end %>

@@ -3,45 +3,46 @@
 <%= render 'search' %>
 
 
-<table>
+<% @requests.each do |request| %>     
 
-    <% @requests.each do |request| %>     
+    <table>
+        <section>  
+            <tr>
+                <td>From:</td>             
+                <td><%= request.user.name %></td>            
+            </tr> 
+            <tr>
+                <td>Title:</td>             
+                <td><%= request.title %></td>            
+            </tr>
+            <tr>
+                <td>Description:</td>
+                <td><%= request.description %></td>
+            </tr>
+            <tr>
+                <td>Date start:</td>             
+                <td><%= request.date_start %></td>            
+            </tr>
+            <tr>
+                <td>Date end:</td>             
+                <td><%= request.date_end %></td>            
+            </tr>       
+            <tr>
+                <td>Category:</td>             
+                <td><%= request.category.title %></td>            
+            </tr>
+            <tr>
+                <td>Location:</td>             
+                <td><%= request.location.name %></td>            
+            </tr>
+            <tr>  
+                <td><a href="/requests/<%= request.id %>"><button>SHOW</button></a></td>
+            </tr>
 
-        <tr>
-            <td>From:</td>             
-            <td><%= request.user.name %></td>            
-        </tr> 
-        <tr>
-            <td>Title:</td>             
-            <td><%= request.title %></td>            
-        </tr>
-        <tr>
-            <td>Description:</td>
-            <td><%= request.description %></td>
-        </tr>
-        <tr>
-            <td>Date start:</td>             
-            <td><%= request.date_start %></td>            
-        </tr>
-        <tr>
-            <td>Date end:</td>             
-            <td><%= request.date_end %></td>            
-        </tr>       
-        <tr>
-            <td>Category:</td>             
-            <td><%= request.category.title %></td>            
-        </tr>
-        <tr>
-            <td>Location:</td>             
-            <td><%= request.location.name %></td>            
-        </tr>
-        <tr>  
-            <td><a href="/requests/<%= request.id %>"><button>SHOW</button></a></td>
-            <td><a href="/requests/<%= request.id %>/edit"><button>EDIT</button></a></td>
-        </tr>
-         <tr class="divider"><td colspan="2">.</td></tr>
+        </section>
+    </table>
         
-    <% end %>
+<% end %>
 
-</table>
+
 

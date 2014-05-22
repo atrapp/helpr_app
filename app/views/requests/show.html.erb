@@ -90,12 +90,16 @@
     </section>
 </table>
 
-<section>
-    <a href="/requests/<%= @request.id %>/edit"><button>EDIT</button></a>
+<% if current_user && (current_user.email == @request.user.email || current_user.email == "admin@helpr.com") %>
 
-    <form action="/requests/<%= @request.id%>" method="post">
-      <%= token_tag %>
-      <input type="hidden" name="_method" value="delete">
-      <input type="submit" value="DELETE">
-    </form>
-</section>
+    <section>
+        <a href="/requests/<%= @request.id %>/edit"><button>EDIT</button></a>
+
+        <form action="/requests/<%= @request.id%>" method="post">
+          <%= token_tag %>
+          <input type="hidden" name="_method" value="delete">
+          <input type="submit" value="DELETE">
+        </form>
+    </section>
+
+<% end %>

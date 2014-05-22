@@ -1,10 +1,14 @@
 <%= render 'errors' %>
 
-<%= form_for @category do |f| %>
+<div class="container">
 
-  <%= f.label :title %>
-  <%= f.text_field :title %><br />  
+    <%= form_for @category do |f| %>
 
-  <%= f.submit %>
+      <%= f.label :title %>
+      <%= f.text_field :title %><br />  
 
-<% end %>
+      <%= f.submit %>
+
+    <% end %>
+
+</div>

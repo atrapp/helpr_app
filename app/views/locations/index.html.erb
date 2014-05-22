@@ -8,35 +8,27 @@
 <%= render 'search' %>
 
 
-<table>
+<% @locations.each do |location| %>
 
-    <% @locations.each do |location| %>
+   <table>
+        <section> 
+            <tr>
+                <td>Name:</td>             
+                <td><%= location.name %></td>            
+            </tr>
+            <tr>
+                <td>Address:</td>
+                <td><%= location.address %></td>
+            </tr>            
+            <tr>     
+                <td colspan="2"><%= static_map_for(location) %></td>
+            </tr>
+            <tr>  
+                <td><a href="/locations/<%= location.id %>"><button>SHOW</button></a></td>               
+            </tr>            
 
-        <tr>
-            <td>Name:</td>             
-            <td><%= location.name %></td>            
-        </tr>
-        <tr>
-            <td>Address:</td>
-            <td><%= location.address %></td>
-        </tr>
-        <tr>
-            <td>Category:</td>
-            <td><%= location.cat %></td>
-        </tr>
-        <tr>
-            <td>Public?</td>
-            <td><%= location.public %></td>
-        </tr>
-        <tr>     
-            <td colspan="2"><%= static_map_for(location) %></td>
-        </tr>
-        <tr>  
-            <td><a href="/locations/<%= location.id %>"><button>SHOW</button></a></td>
-            <td><a href="/locations/<%= location.id %>/edit"><button>EDIT</button></a></td>
-        </tr>
-         <tr class="divider"><td colspan="2">.</td></tr>
+        </section>
+    </table>
+        
+<% end %>
 
-    <% end %>
-
-</table>

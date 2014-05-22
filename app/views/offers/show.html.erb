@@ -88,7 +88,7 @@
 </table>
 
 
-<% if current_user && (current_user.email == @request.user.email || current_user.email == "admin@helpr.com") %>
+<% if current_user && (current_user.email == @offer.user.email || current_user.email == "admin@helpr.com") %>
 
     <section>
         <a href="/offers/<%= @offer.id %>/edit"><button>EDIT</button></a>

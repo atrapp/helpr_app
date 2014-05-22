@@ -2,21 +2,21 @@
 
 <p class="create"><button><%= link_to "Create category", new_category_path %></button></p>
 
-<table>
 
-    <% @categories.each do |category| %>
+<% @categories.each do |category| %>
+
+   <table>
+        <section> 
      
-        <tr>
-            <td>Title:</td>             
-            <td><%= category.title %></td>            
-        </tr>       
-        <tr>  
-            <td><a href="/categories/<%= category.id %>"><button>SHOW</button></a></td>
-            <td><a href="/categories/<%= category.id %>/edit"><button>EDIT</button></a></td>
-        </tr>
-         <tr class="divider"><td colspan="2">.</td></tr>
+            <tr>
+                <td>Title:</td>             
+                <td><%= category.title %></td>            
+            </tr>       
+            <tr>  
+                <td><a href="/categories/<%= category.id %>"><button>SHOW</button></a></td>                
+            </tr>
+
+        </section>
+    </table>
         
-    <% end %>
-
-</table>
-
+<% end %>

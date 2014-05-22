@@ -1,6 +1,7 @@
 <h2>User Data</h2>
 
 <table>
+    <section> 
 
         <tr>            
             <td colspan="2"><%= gravatar_for @user %></td>
@@ -38,12 +39,18 @@
             <td><%= @user.rating %></td>            
         </tr>        
        
+    </section>
 </table>
 
-<a href="/users/<%= @user.id %>/edit"><button>EDIT</button></a>
 
-<form action="/users/<%= @user.id%>" method="post">
-  <%= token_tag %>
-  <input type="hidden" name="_method" value="delete">
-  <input type="submit" value="DELETE">
-</form>
+<section>
+    <a href="/users/<%= @user.id %>/edit"><button>EDIT</button></a>
+
+    <form action="/users/<%= @user.id%>" method="post">
+      <%= token_tag %>
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" value="DELETE">
+    </form>
+</section>
+
+

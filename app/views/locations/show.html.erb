@@ -1,6 +1,7 @@
 <h2>Location Data</h2>
 
 <table>
+    <section>  
 
         <tr>
             <td>Name:</td>             
@@ -22,17 +23,19 @@
             <td colspan="2"><%= static_map_for(@location) %></td>
         </tr>
       
+    </section>
 </table>
 
+<section>
+    <% if current_user && (current_user.email == "admin@helpr.com") %>
 
-<% if current_user && (current_user.email == "admin@helpr.com") %>
+        <a href="/locations/<%= @location.id %>/edit"><button>EDIT</button></a>
 
-    <a href="/locations/<%= @location.id %>/edit"><button>EDIT</button></a>
+        <form action="/locations/<%= @location.id%>" method="post">
+          <%= token_tag %>
+          <input type="hidden" name="_method" value="delete">
+          <input type="submit" value="DELETE">
+        </form>
 
-    <form action="/locations/<%= @location.id%>" method="post">
-      <%= token_tag %>
-      <input type="hidden" name="_method" value="delete">
-      <input type="submit" value="DELETE">
-    </form>
-
-<% end %>
+    <% end %>
+</section>

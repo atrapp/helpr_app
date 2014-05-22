@@ -13,11 +13,7 @@ Description
 ===========
 A Web App for finding, requesting or offering help in different categories (e.g. Computer, Shopping, Pets etc.).
 
-http://imgur.com/MFAT4VW
-
-
-Inline-style: 
-![alt text](https://github.com/atrapp/wdi-project1/blob/master/app/assets/images/helpr.png "Screen Hompage")
+![  ](https://github.com/atrapp/wdi-project1/blob/master/app/assets/images/helpr.png "Helpr Hompage")
 
 
 

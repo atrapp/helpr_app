@@ -1,19 +1,25 @@
 
-<h3><%= @requests.count %> results for your search</h3>
-<h4>Category: <%= @search_cat %></h4>
-<h4>Radius: <%= @radius %> mile(s)</h4>
-<h4>Your address: <%= @start_location %></h4>
+<h2><%= @requests.count %> results for your search</h2>
 
-<ol>
-<% @requests.each do |request| %>
-    <li>                   
-        <h3><%= request.title %></h3>
-        <p><%= request.user.name %></p>
-        <p><%= request.user.email %></p>
-        <p><%= request.description %></p>
-        <p>from: <%= request.date_start %> until: <%= request.date_end %></p>
-        <p>Address: <%= request.location.address %></p>
-        <%= static_map_for(request.location) %>
-    </li>
-<% end %>
-</ol>
+<div class="searchform">
+    <h4>Category: <%= @search_cat %></h4>
+    <h4>Radius: <%= @radius %> mile(s)</h4>
+    <h4>Your address: <%= @start_location %></h4>
+</div>
+
+<div class="container">
+    <ol>
+    <% @requests.each do |request| %>
+        <li>                   
+            <h3><%= request.title %></h3>
+            <p><%= request.user.name %></p>
+            <p><%= request.user.email %></p>
+            <p><%= request.description %></p>
+            <p>from: <%= request.date_start %> until: <%= request.date_end %></p>
+            <p>Address: <%= request.location.address %></p>
+            <%= static_map_for(request.location) %>
+        </li>
+        <hr />
+    <% end %>
+    </ol>
+</div>

@@ -2,9 +2,9 @@
 <h3><%= @results.count %> Results</h3>
 
 <% if @search_type == "request" %>
-    <p class="create"><%= link_to "Create request", new_request_path %></p>
-    <% else %>
-    <p class="create"><%= link_to "Create offer", new_offer_path %></p>
+    <p class="create"><button><%= link_to "Create request", new_request_path %></button></p>
+  <% else %>
+    <p class="create"><button><%= link_to "Create offer", new_offer_path %></button></p>
 <% end %>
 
 <ol>

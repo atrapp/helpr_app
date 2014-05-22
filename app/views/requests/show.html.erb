@@ -1,10 +1,12 @@
 <h2>Request Data</h2>
 
- <table>
-        <!--  user data -->
+
+<table>
+    <section>       
         <tr>
-            <td colspan="2">---- About User ----</td>           
+            <td colspan="2"><h3>About User</h3></td>           
         </tr> 
+
         <tr>
             <td colspan="2"><%= gravatar_for @request.user %></td>
         </tr>    
@@ -31,10 +33,13 @@
         <tr>
             <td colspan="2"><%= @request.user.description %></td>                       
         </tr> 
+    </section>
+</table>
 
-        <!--  request data -->
+<table>
+    <section>        
         <tr>
-            <td colspan="2">---- About Request ----</td>           
+            <td colspan="2"><h3>Request info</h3></td>           
         </tr> 
         <tr>
             <td>Category:</td>             
@@ -54,11 +59,14 @@
         </tr>  
         <tr>
             <td colspan="2"><%= @request.description %></td>           
-        </tr>    
+        </tr>
+    </section>
+</table>
 
-         <!--  location data --> 
+<table>
+    <section>  
         <tr>
-            <td colspan="2">---- About Location ----</td>           
+            <td colspan="2"><h3>Location</h3></td>           
         </tr>           
         <tr>
             <td>Location:</td>             
@@ -79,13 +87,15 @@
         <tr>     
             <td colspan="2"><%= static_map_for(@request.location) %></td>
         </tr>
-        
+    </section>
 </table>
 
-<a href="/requests/<%= @request.id %>/edit"><button>EDIT</button></a>
+<section>
+    <a href="/requests/<%= @request.id %>/edit"><button>EDIT</button></a>
 
-<form action="/requests/<%= @request.id%>" method="post">
-  <%= token_tag %>
-  <input type="hidden" name="_method" value="delete">
-  <input type="submit" value="DELETE">
-</form>
+    <form action="/requests/<%= @request.id%>" method="post">
+      <%= token_tag %>
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" value="DELETE">
+    </form>
+</section>

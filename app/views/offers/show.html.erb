@@ -1,9 +1,9 @@
 <h2>Offer Data</h2>
 
 <table>
-        <!--  user data -->
+    <section>  
         <tr>
-            <td colspan="2">---- About User ----</td>           
+            <td colspan="2"><h3>About User</h3></td>           
         </tr>
         <tr>
             <td colspan="2"><%= gravatar_for @offer.user %></td>
@@ -30,11 +30,13 @@
         </tr> 
         <tr>
             <td colspan="2"><%= @offer.user.description %></td>                       
-        </tr> 
+    </section>
+</table>
 
-        <!--  offer data -->
+<table>
+    <section>  
         <tr>
-            <td colspan="2">---- About Offer ----</td>           
+            <td colspan="2"><h3>Offer info</h3></td>           
         </tr> 
         <tr>
             <td>Category:</td>             
@@ -55,10 +57,13 @@
         <tr>
             <td colspan="2"><%= @offer.description %></td>           
         </tr>    
+    </section>
+</table>
 
-         <!--  location data --> 
+<table>
+    <section>  
         <tr>
-            <td colspan="2">---- About Location ----</td>           
+            <td colspan="2"><h3>Location</h3></td>           
         </tr>           
         <tr>
             <td>Location:</td>             
@@ -79,14 +84,16 @@
         <tr>     
             <td colspan="2"><%= static_map_for(@offer.location) %></td>
         </tr>
-        
+    </section>
 </table>
 
-<a href="/offers/<%= @offer.id %>/edit"><button>EDIT</button></a>
+<section>
+    <a href="/offers/<%= @offer.id %>/edit"><button>EDIT</button></a>
 
-<form action="/offers/<%= @offer.id%>" method="post">
-  <%= token_tag %>
-  <input type="hidden" name="_method" value="delete">
-  <input type="submit" value="DELETE">
-</form>
+    <form action="/offers/<%= @offer.id%>" method="post">
+      <%= token_tag %>
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" value="DELETE">
+    </form>
+</section>
 

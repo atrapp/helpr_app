@@ -87,7 +87,7 @@ nav.main a {
 .content {
   margin: 0 auto;
   max-width: 600px;
-  min-height: 500px;
+  min-height: 500px;  
 }
 
 .nav .circle {
@@ -120,22 +120,31 @@ nav.main a {
   /* background-color: #2991FF; blue */
 }
 
-table {
+.create {
+
+}
+
+table, .container {
   margin: 0 auto;
   padding: 20px 50px;  
   width: 500px;
   background-color: rgba(255,233,255,0.7);
+}  
+
+section {
+  margin: 0 auto;
+  padding: 20px 50px;  
+  width: 400px;
 }
+
 table .divider {
-  padding-bottom: 10px;
-  background: black;
+  padding-bottom: 10px;  
   color: rgba(0,106,255,0.7); /*#006AFF;*/
   background: rgba(0,106,255,0.7); /*#006AFF;*/
 }
 
 .searchform {
   margin: 0 auto;
-
   padding: 20px 50px; 
   max-width: 500px; 
   background: gray;

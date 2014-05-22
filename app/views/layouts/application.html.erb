@@ -39,12 +39,14 @@
 
     </header>
     
-    <nav class="main">        
-      <a href="/users">Users</a>
+    <nav class="main">     
       <a href="/requests">Requests</a>
-      <a href="/offers">Offers</a>
-      <a href="/categories">Categories</a>
+      <a href="/offers">Offers</a>      
       <a href="/locations">Locations</a>
+      <% if current_user && (current_user.email == "admin@helpr.com") %>
+        <a href="/categories">Categories</a>
+        <a href="/users">Users</a>
+      <% end %>
     </nav>
 
     <div class="content">
@@ -57,7 +59,7 @@
           <%= flash.now[:notice] %>
         </h3>
       </div>
-
+    
       <%= yield %>
 
     </div>

@@ -1,6 +1,9 @@
 <h2>All locations</h2>
 
-<%= link_to "Create location", new_location_path %>
+<% if current_user && (current_user.email == "admin@helpr.com") %>
+    <p class="create"><button><%= link_to "Create location", new_location_path %></button></p>
+<% end %>
+
 
 <%= render 'search' %>
 

@@ -1,5 +1,5 @@
 
-<h3><%= @results.count %> Results</h3>
+<h2><%= @results.count %> Results for <%= @search_type %></h2>
 
 <% if @search_type == "request" %>
     <p class="create"><button><%= link_to "Create request", new_request_path %></button></p>
@@ -7,15 +7,44 @@
     <p class="create"><button><%= link_to "Create offer", new_offer_path %></button></p>
 <% end %>
 
-<ol>
-<% @results.each do |result| %>
-    <li>                   
-        <h3><%= result.title %></h3>        
-        <p><%= result.description %></p>
-        <p>from: <%= result.date_start %> until: <%= result.date_end %></p>
-        <p>Address: <%= result.location.address %></p>
-        <p><%= result.location.address %></p>
-        <%= static_map_for(result.location) %>
-    </li>
+
+<% @results.each do |result| %>     
+
+    <table>
+        <section>  
+           
+            <tr>
+                <td colspan="2"><h3><%= result.title %></h3></td>
+            </tr>
+            <tr>
+                <td>Description:</td>
+                <td><%= result.description %></td>
+            </tr>
+            <tr>
+                <td>Date start:</td>             
+                <td><%= result.date_start %></td>            
+            </tr>
+            <tr>
+                <td>Date end:</td>             
+                <td><%= result.date_end %></td>            
+            </tr>       
+            <tr>
+                <td>Category:</td>             
+                <td><%= result.category.title %></td>            
+            </tr>
+            <tr>
+                <td>Location:</td>             
+                <td><%= result.location.name %></td>            
+            </tr>  
+            <% if @search_type == "request" %>
+                <td><a href="/requests/<%= result.id %>"><button>SHOW</button></a></td>
+            <% else %>
+               <td><a href="/offers/<%= result.id %>"><button>SHOW</button></a></td>
+            <% end %>            
+
+        </section>
+    </table>
+        
 <% end %>
-</ol>
+
+ 

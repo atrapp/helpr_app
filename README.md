@@ -13,7 +13,7 @@ Description
 ===========
 A Web App for finding, requesting or offering help in different categories (e.g. Computer, Shopping, Pets etc.).
 
-![image](https://github.com/atrapp/wdi-project1/blob/master/app/assets/images/helpr.png "Helpr Hompage")
+![image](https://raw.githubusercontent.com/atrapp/wdi-project1/master/app/assets/images/helpr.png "Helpr Hompage")
 
 API
 ===

@@ -33,6 +33,4 @@ Rails.application.routes.draw do
     get :search
   end
 
-  get 'tests' => 'tests#index'
-
 end

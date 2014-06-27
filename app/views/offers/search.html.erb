@@ -1,48 +1,46 @@
-
 <h2><%= @offers.count %> results for your search</h2>
 
 <div class="searchform">
-    <h4>Category: <%= @search_cat %></h4>
-    <h4>Radius: <%= @radius %> mile(s)</h4>
-    <h4>Your address: <%= @start_location %></h4>
+  <h4>Category: <%= @search_cat %></h4>
+  <h4>Radius: <%= @radius %> mile(s)</h4>
+  <h4>Your address: <%= @start_location %></h4>
 </div>
 
 <% @offers.each do |offer| %>
 
-    <table>
-        <section>  
-            <tr>
-                <td colspan="2"><h3><%= offer.title %></h3></td>                          
-            </tr>
-            <tr>
-                <td>From:</td>             
-                <td><%= offer.user.name %></td>            
-            </tr> 
-            <tr>
-                <td>Email:</td>             
-                <td><%= offer.user.email %></td>            
-            </tr>             
-            <tr>
-                <td>Description:</td>
-                <td><%= offer.description %></td>
-            </tr>
-            <tr>
-                <td>Date start:</td>             
-                <td><%= offer.date_start %></td>            
-            </tr>
-            <tr>
-                <td>Date end:</td>             
-                <td><%= offer.date_end %></td>            
-            </tr>            
-            <tr>
-                <td>Location:</td>             
-                <td><%= offer.location.name %></td>            
-            </tr>           
-            <tr>  
-                <td><a href="/offers/<%= offer.id %>"><button>SHOW</button></a></td>
-            </tr>
+  <table>
+    <section>
+      <tr>
+        <td colspan="2"><h3><%= offer.title %></h3></td>
+      </tr>
+      <tr>
+        <td>From:</td>
+        <td><%= offer.user.name %></td>
+      </tr>
+      <tr>
+        <td>Email:</td>
+        <td><%= offer.user.email %></td>
+      </tr>
+      <tr>
+        <td>Description:</td>
+        <td><%= offer.description %></td>
+      </tr>
+      <tr>
+        <td>Date start:</td>
+        <td><%= offer.date_start %></td>
+      </tr>
+      <tr>
+        <td>Date end:</td>
+        <td><%= offer.date_end %></td>
+      </tr>
+      <tr>
+        <td>Location:</td>
+        <td><%= offer.location.name %></td>
+      </tr>
+      <tr>
+        <td><a href="/offers/<%= offer.id %>"><button>SHOW</button></a></td>
+      </tr>
 
-        </section>
-    </table>
+    </section>
+  </table>
 <% end %>
-   

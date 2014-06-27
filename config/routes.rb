@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
-  
+
   root 'welcome#index'
 
   ############ Authentication ##############
 
   get 'sessions/new' => 'sessions#new', as: 'log_in'
   post 'sessions' => 'sessions#create'
-  delete 'sessions' => 'sessions#destroy', as: 'log_out'  
+  delete 'sessions' => 'sessions#destroy', as: 'log_out'
 
   # in case a user profile is being deleted without destroy the corresponding session:
   get 'log_out' => 'sessions#destroy'
@@ -14,34 +14,25 @@ Rails.application.routes.draw do
   get 'profiles' => 'profiles#index'
 
   ##########################################
-  
-  # get 'users' => 'users#index'
-  # get 'users/new' => 'users#new'
-  # post 'users' => 'users#create'
-  # get 'users/:id' => 'users#show', as: 'user'
-  # get 'users/:id/edit' => 'users#edit'
-  # put 'users/:id' => 'users#update'
-  # delete 'users/:id' => 'users#destroy'
-  get '/users/search' => 'users#search'
-  resources :users
 
-  get '/locations/search' => 'locations#search'
-  resources :locations
+  resources :users do
+    get :search
+  end
+
+  resources :locations do
+    get :search
+  end
 
   resources :categories
 
-  get '/requests/search' => 'requests#search'
-  resources :requests
-  
-  get '/offers/search' => 'offers#search'  
-  resources :offers
+  resources :requests do
+    get :search
+  end
 
-  # resources :users do 
-  #   resources :requests, except: [:show, :index]
-  #   resources :offers, except: [:show, :index]
-  # end
+  resources :offers do
+    get :search
+  end
 
   get 'tests' => 'tests#index'
 
 end
-

@@ -1,7 +1,7 @@
 <h2>All locations</h2>
 
 <% if current_user && (current_user.email == "admin@helpr.com") %>
-    <p class="create"><button><%= link_to "Create location", new_location_path %></button></p>
+  <p class="create"><button><%= link_to "Create location", new_location_path %></button></p>
 <% end %>
 
 
@@ -10,25 +10,24 @@
 
 <% @locations.each do |location| %>
 
-   <table>
-        <section> 
-            <tr>
-                <td>Name:</td>             
-                <td><%= location.name %></td>            
-            </tr>
-            <tr>
-                <td>Address:</td>
-                <td><%= location.address %></td>
-            </tr>            
-            <tr>     
-                <td colspan="2"><%= static_map_for(location) %></td>
-            </tr>
-            <tr>  
-                <td><a href="/locations/<%= location.id %>"><button>SHOW</button></a></td>               
-            </tr>            
+  <table>
+    <section>
+      <tr>
+        <td>Name:</td>
+        <td><%= location.name %></td>
+      </tr>
+      <tr>
+        <td>Address:</td>
+        <td><%= location.address %></td>
+      </tr>
+      <tr>
+        <td colspan="2"><%= static_map_for(location) %></td>
+      </tr>
+      <tr>
+        <td><a href="/locations/<%= location.id %>"><button>SHOW</button></a></td>
+      </tr>
 
-        </section>
-    </table>
-        
+    </section>
+  </table>
+
 <% end %>
-

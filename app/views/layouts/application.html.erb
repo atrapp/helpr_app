@@ -1,72 +1,72 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>MyHelprApp</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>  
-  <link href='http://fonts.googleapis.com/css?family=Gloria+Hallelujah' rel='stylesheet' type='text/css'>  
-  <link href='http://fonts.googleapis.com/css?family=Short+Stack' rel='stylesheet' type='text/css'>
-</head>
-<body>
+  <head>
+    <title>MyHelprApp</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <link href='http://fonts.googleapis.com/css?family=Gloria+Hallelujah' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Short+Stack' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
 
-  <div class="wrapper">
+    <div class="wrapper">
 
-    <header>
+      <header>
 
-      <div class="logo">       
-        <a href="/"><img src="<%=asset_url('logo.png')%>" alt="Logo"></a>
-      </div>
+        <div class="logo">
+          <a href="/"><img src="<%=asset_url('logo.png')%>" alt="Logo"></a>
+        </div>
 
-      <h1>Helpr!</h1>
+        <h1>Helpr!</h1>
 
-      <div class="login">
+        <div class="login">
           <% if current_user %>
             <p>
               <%= current_user.email %>
             </p>
-              <%= link_to "Log-Out", log_out_path, method: :delete %>
-              <%= link_to "User-Profile",  "/users/#{current_user.id}" %>
-              <%= link_to "Offers", "/users/search?t=offer" %>
-              <%= link_to "Requests", "/users/search?t=request" %>
+            <%= link_to "Log-Out", log_out_path, method: :delete %>
+            <%= link_to "User-Profile",  "/users/#{current_user.id}" %>
+            <%= link_to "Offers", "/users/search?t=offer" %>
+            <%= link_to "Requests", "/users/search?t=request" %>
           <% else%>
-              <%= link_to "Log-In", log_in_path %>
-              <%= link_to "Sign-Up", new_user_path %>
+            <%= link_to "Log-In", log_in_path %>
+            <%= link_to "Sign-Up", new_user_path %>
           <% end %>
+        </div>
+
+      </header>
+
+      <nav class="main">
+        <a href="/requests">Requests</a>
+        <a href="/offers">Offers</a>
+        <a href="/locations">Locations</a>
+        <% if current_user && (current_user.email == "admin@helpr.com") %>
+          <a href="/categories">Categories</a>
+          <a href="/users">Users</a>
+        <% end %>
+      </nav>
+
+      <div class="content">
+
+        <div>
+          <h3>
+            <%= flash.now[:alert] %>
+          </h3>
+          <h3>
+            <%= flash.now[:notice] %>
+          </h3>
+        </div>
+
+        <%= yield %>
+
       </div>
 
-    </header>
-    
-    <nav class="main">     
-      <a href="/requests">Requests</a>
-      <a href="/offers">Offers</a>      
-      <a href="/locations">Locations</a>
-      <% if current_user && (current_user.email == "admin@helpr.com") %>
-        <a href="/categories">Categories</a>
-        <a href="/users">Users</a>
-      <% end %>
-    </nav>
-
-    <div class="content">
-
-      <div>
-        <h3>
-          <%= flash.now[:alert] %>
-        </h3>
-        <h3>
-          <%= flash.now[:notice] %>
-        </h3>
-      </div>
-    
-      <%= yield %>
+      <footer>
+        <p class="copyright">&copy; Andrea Trapp, 2014</p>
+      </footer>
 
     </div>
 
-    <footer>
-      <p class="copyright">&copy; Andrea Trapp, 2014</p> 
-    </footer>
-
-  </div>
-
-</body>
+  </body>
 </html>

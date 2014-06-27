@@ -1,104 +1,103 @@
 <h2>Offer Data</h2>
 
 <table>
-    <section>  
-        <tr>
-            <td colspan="2"><h3>About User</h3></td>           
-        </tr>
-        <tr>
-            <td colspan="2"><%= gravatar_for @offer.user %></td>
-        </tr>    
-        <tr>
-            <td>Name:</td>             
-            <td><%= @offer.user.name %></td>            
-        </tr>    
-        <tr>
-            <td>Gender:</td>             
-            <td><%= @offer.user.gender %></td>            
-        </tr>
-        <tr>
-            <td>Age:</td>             
-            <td><%= @offer.user.age %></td>            
-        </tr> 
-        <tr>
-            <td>Phone:</td>             
-            <td><%= @offer.user.phone %></td>            
-        </tr>  
-        <tr>
-            <td>Email:</td>             
-            <td><%= @offer.user.email %></td>            
-        </tr> 
-        <tr>
-            <td colspan="2"><%= @offer.user.description %></td>                       
-    </section>
+  <section>
+    <tr>
+      <td colspan="2"><h3>About User</h3></td>
+    </tr>
+    <tr>
+      <td colspan="2"><%= gravatar_for @offer.user %></td>
+    </tr>
+    <tr>
+      <td>Name:</td>
+      <td><%= @offer.user.name %></td>
+    </tr>
+    <tr>
+      <td>Gender:</td>
+      <td><%= @offer.user.gender %></td>
+    </tr>
+    <tr>
+      <td>Age:</td>
+      <td><%= @offer.user.age %></td>
+    </tr>
+    <tr>
+      <td>Phone:</td>
+      <td><%= @offer.user.phone %></td>
+    </tr>
+    <tr>
+      <td>Email:</td>
+      <td><%= @offer.user.email %></td>
+    </tr>
+    <tr>
+      <td colspan="2"><%= @offer.user.description %></td>
+  </section>
 </table>
 
 <table>
-    <section>  
-        <tr>
-            <td colspan="2"><h3>Offer info</h3></td>           
-        </tr> 
-        <tr>
-            <td>Category:</td>             
-            <td><%= @offer.category.title %></td>            
-        </tr>
-        <tr>
-            <td>Title:</td>             
-            <td><%= @offer.title %></td>            
-        </tr>        
-        <tr>
-            <td>Date start:</td>             
-            <td><%= @offer.date_start %></td>            
-        </tr>
-        <tr>
-            <td>Date end:</td>             
-            <td><%= @offer.date_end %></td>            
-        </tr>  
-        <tr>
-            <td colspan="2"><%= @offer.description %></td>           
-        </tr>    
-    </section>
+  <section>
+    <tr>
+      <td colspan="2"><h3>Offer info</h3></td>
+    </tr>
+    <tr>
+      <td>Category:</td>
+      <td><%= @offer.category.title %></td>
+    </tr>
+    <tr>
+      <td>Title:</td>
+      <td><%= @offer.title %></td>
+    </tr>
+    <tr>
+      <td>Date start:</td>
+      <td><%= @offer.date_start %></td>
+    </tr>
+    <tr>
+      <td>Date end:</td>
+      <td><%= @offer.date_end %></td>
+    </tr>
+    <tr>
+      <td colspan="2"><%= @offer.description %></td>
+    </tr>
+  </section>
 </table>
 
 <table>
-    <section>  
-        <tr>
-            <td colspan="2"><h3>Location</h3></td>           
-        </tr>           
-        <tr>
-            <td>Location:</td>             
-            <td><%= @offer.location.name %></td>            
-        </tr>
-        <tr>
-            <td>Address:</td>             
-            <td><%= @offer.location.address %></td>            
-        </tr>
-        <tr>
-            <td>Category:</td>             
-            <td><%= @offer.location.cat %></td>            
-        </tr>
-         <tr>
-            <td>Public?:</td>             
-            <td><%= @offer.location.public %></td>            
-        </tr>
-        <tr>     
-            <td colspan="2"><%= static_map_for(@offer.location) %></td>
-        </tr>
-    </section>
+  <section>
+    <tr>
+      <td colspan="2"><h3>Location</h3></td>
+    </tr>
+    <tr>
+      <td>Location:</td>
+      <td><%= @offer.location.name %></td>
+    </tr>
+    <tr>
+      <td>Address:</td>
+      <td><%= @offer.location.address %></td>
+    </tr>
+    <tr>
+      <td>Category:</td>
+      <td><%= @offer.location.cat %></td>
+    </tr>
+    <tr>
+      <td>Public?:</td>
+      <td><%= @offer.location.public %></td>
+    </tr>
+    <tr>
+      <td colspan="2"><%= static_map_for(@offer.location) %></td>
+    </tr>
+  </section>
 </table>
 
 
 <% if current_user && (current_user.email == @offer.user.email || current_user.email == "admin@helpr.com") %>
 
-    <section>
-        <a href="/offers/<%= @offer.id %>/edit"><button>EDIT</button></a>
+  <section>
+    <a href="/offers/<%= @offer.id %>/edit"><button>EDIT</button></a>
 
-        <form action="/offers/<%= @offer.id%>" method="post">
-          <%= token_tag %>
-          <input type="hidden" name="_method" value="delete">
-          <input type="submit" value="DELETE">
-        </form>
-    </section>
+    <form action="/offers/<%= @offer.id%>" method="post">
+      <%= token_tag %>
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" value="DELETE">
+    </form>
+  </section>
 
 <% end %>
-

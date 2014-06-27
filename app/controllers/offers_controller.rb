@@ -5,14 +5,12 @@ class OffersController < ApplicationController
   end
 
   def search
-    @search_cat = params[:search_cat].values.first
-    @start_location = params[:start_location]
-    @radius = params[:radius]
+    search_cat = params[:search_cat].values.first
+    start_location = params[:start_location]
+    radius = params[:radius]
 
-    if @search_cat !="" && @start_location !="" && @radius !=""
-      nearby_locations = Location.within(@radius, origin: @start_location)
-      potential_offers = nearby_locations.map { |location| location.offers }.flatten
-      @offers = potential_offers.select { |offer| offer.category.title == @search_cat}
+    if ![search_cat, start_location, radius].include? ''
+      Search.new(search_cat, start_location, radius).call
     else
       redirect_to offers_path
     end

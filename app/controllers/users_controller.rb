@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def new
-    @user = User.new   
+    @user = User.new
   end
 
   def create
@@ -24,15 +24,15 @@ class UsersController < ApplicationController
   end
 
   def edit
-    unless current_user.nil?     
-      if current_user.id == User.find(params[:id]).id || current_user.email == "admin@helpr.com" 
-        @user = User.find(params[:id])    
-      else 
+    unless current_user.nil?
+      if current_user.id == User.find(params[:id]).id || current_user.email == "admin@helpr.com"
+        @user = User.find(params[:id])
+      else
         redirect_to users_path, alert: 'Only Author can update'
       end
     else
       redirect_to log_in_path, alert: 'Log-In Failed'
-    end   
+    end
   end
 
   def update
@@ -42,16 +42,16 @@ class UsersController < ApplicationController
       redirect_to user_path(@user)
     else
       render 'edit'
-    end    
+    end
   end
 
   def destroy
-    unless current_user.nil?     
-      if current_user.id == User.find(params[:id]).id || current_user.email == "admin@helpr.com" 
+    unless current_user.nil?
+      if current_user.id == User.find(params[:id]).id || current_user.email == "admin@helpr.com"
         session[current_user.id] = nil
-        User.delete(params[:id])   
+        User.delete(params[:id])
         redirect_to users_path
-      else 
+      else
         redirect_to users_path, alert: 'Only Author can delete'
       end
     else
@@ -60,18 +60,16 @@ class UsersController < ApplicationController
   end
 
   def search
-    unless current_user.nil?  
+    unless current_user.nil?
       @search_type = params[:t]
-      potential_results = Offer.all if @search_type == "offer"
-      potential_results = Request.all if @search_type == "request"      
-      @results = potential_results.select { |result| result.user_id == current_user.id} 
+      @results = current_user.send @search_type.pluralize
     end
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:name, :address, :gender, :age, :phone, :email, :email_confirmation, :description, :rating, :picUrl, :password, :password_confirmation) 
+    params.require(:user).permit(:name, :address, :gender, :age, :phone, :email, :email_confirmation, :description, :rating, :picUrl, :password, :password_confirmation)
   end
 
 end

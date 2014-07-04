@@ -3,7 +3,7 @@ wdi-project1
 
 http://wdi-project1-helpr.herokuapp.com/
 
-https://github.com/atrapp/wdi-project1
+https://github.com/atrapp/helpr_app
 
 Title
 =====

@@ -15,8 +15,9 @@ Developer @GA in NYC
 .wrapper {
   margin: 0 auto;  
   padding: 0;
-  max-width: 800px;   
-  background-color: rgba(255,233,255,0.5);
+  max-width: 900px;   
+  font-size: 20px;
+  background-color: rgba(255,233,255,0.7);
 }
 
 header {
@@ -39,6 +40,7 @@ h1 {
 
 h2 {
   margin: 0;
+  margin-top: 20px;
   font-size: 100%; 
   font-family: 'Gloria Hallelujah', cursive;
   text-align: center;
@@ -49,9 +51,9 @@ h3 {
 }
 
 .login {
-  float: right;
-  font-size: 10px;
-  font-family: 'Short Stack', cursive;  
+  float: right;   
+  font-family: 'Short Stack', cursive;
+  font-size: 16px;  
 }
 
 nav.main { 
@@ -70,8 +72,7 @@ nav.main {
 }
 
 nav.main a {
- text-decoration: none;
- font-size: 12px;
+ text-decoration: none; 
  color: #FF9500;
  padding: 5px;
 }
@@ -100,15 +101,14 @@ nav.main a {
 .request {
   float: left;
   margin: 20px; 
-  background: image-url("sw304.jpg") center;
-  /*background-color: #FF9729; orange */
+  background: image-url("sw304.jpg") center;  
 }
 
 .offer {  
   float: left; 
+  width: 100%;
   margin: 20px;
-  background: image-url("sw305.jpg") center; 
-  /* background-color: #2991FF; blue */
+  background: image-url("sw308.jpg") center; 
 }
 
 table, .container {
@@ -145,7 +145,7 @@ footer .copyright {
   float: right;  
   padding: 10px;
   padding-top: 40px;
-  font-size: 10px;
+  font-size: 12px;
 }
 
 /* Clear fix hack */

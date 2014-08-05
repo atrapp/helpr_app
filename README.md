@@ -2,7 +2,7 @@ Helpr!
 ============
 (wdi-project1)
 
-http://wdi-project1-helpr.herokuapp.com/
+https://wdi-project1-helpr.herokuapp.com/
 
 https://github.com/atrapp/helpr_app
 

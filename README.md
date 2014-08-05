@@ -1,17 +1,21 @@
-wdi-project1
+Helpr!
 ============
+(wdi-project1)
 
 http://wdi-project1-helpr.herokuapp.com/
 
 https://github.com/atrapp/helpr_app
 
-Title
-=====
-Helpr!
-
 Description
 ===========
-A Web App for finding, requesting or offering help in different categories (e.g. Computer, Shopping, Pets etc.).
+A Web App for finding, requesting or offering help in different categories (e.g. Computer, Shopping, Pets etc.) and locations.
+
+You can browse requests and offers without signing up. In case you want to place either an offer for help or a request, you need to sign up.
+
+You can search by category and location. Simply put in your address and specify the radius within you look for requests or offers and select a category.
+
+For testing purposes just click "Log-In" and log in as "user@test.com".
+
 
 ![image](https://raw.githubusercontent.com/atrapp/wdi-project1/master/app/assets/images/helpr.jpg "Helpr Hompage")
 

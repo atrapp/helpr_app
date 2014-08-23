@@ -5,18 +5,18 @@
 
 <% @categories.each do |category| %>
 
-   <table>
-        <section> 
-     
-            <tr>
-                <td>Title:</td>             
-                <td><%= category.title %></td>            
-            </tr>       
-            <tr>  
-                <td><a href="/categories/<%= category.id %>"><button>SHOW</button></a></td>                
-            </tr>
+  <table>
+    <section>
 
-        </section>
-    </table>
-        
+      <tr>
+        <td>Title:</td>
+        <td><%= category.title %></td>
+      </tr>
+      <tr>
+        <td><a href="/categories/<%= category.id %>"><button>SHOW</button></a></td>
+      </tr>
+
+    </section>
+  </table>
+
 <% end %>

@@ -1,32 +1,31 @@
-
 <h2><%= @locations.count %> results for your search</h2>
 
 <div class="searchform">
-    <h4>Radius: <%= @radius %> mile(s)</h4>
-    <h4>Your address: <%= @start_location %></h4>
+  <h4>Radius: <%= @radius %> mile(s)</h4>
+  <h4>Your address: <%= @start_location %></h4>
 </div>
 
 
 <% @locations.each do |location| %>
 
-   <table>
-        <section> 
-            <tr>
-                <td>Name:</td>             
-                <td><%= location.name %></td>            
-            </tr>
-            <tr>
-                <td>Address:</td>
-                <td><%= location.address %></td>
-            </tr>            
-            <tr>     
-                <td colspan="2"><%= static_map_for(location) %></td>
-            </tr>
-            <tr>  
-                <td><a href="/locations/<%= location.id %>"><button>SHOW</button></a></td>               
-            </tr>            
+  <table>
+    <section>
+      <tr>
+        <td>Name:</td>
+        <td><%= location.name %></td>
+      </tr>
+      <tr>
+        <td>Address:</td>
+        <td><%= location.address %></td>
+      </tr>
+      <tr>
+        <td colspan="2"><%= static_map_for(location) %></td>
+      </tr>
+      <tr>
+        <td><a href="/locations/<%= location.id %>"><button>SHOW</button></a></td>
+      </tr>
 
-        </section>
-    </table>
+    </section>
+  </table>
 
 <% end %>
